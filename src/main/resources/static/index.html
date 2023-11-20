@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>더블루션</title>
+    <script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>
+<!--    <script src="main.js" defer></script>-->
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar__logo">
+        <i class="fa-solid fa-house"></i>
+        <a href="">더블루션</a>
+    </div>
+
+    <ul class="navbar__menu">
+        <li><a href="">서비스 소개</a></li>
+        <li><a href="">사업분야</a></li>
+        <li><a href="">포트폴리오</a></li>
+    </ul>
+
+    <ul class="navbar__icons">
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-solid fa-blog"></i></li>
+    </ul>
+
+    <a href="#" class="navbar__toogleBtn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+</nav>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.navbar__toogleBtn');
+        const menu = document.querySelector('.navbar__menu');
+
+        toggleButton.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    });
+</script>
+</html>

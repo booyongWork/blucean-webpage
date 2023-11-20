@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>theBlucean</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--  CSP(Content Security Policy): 콘텐츠 보안 정책  -->
+    <!--meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"-->
+    <!-- css 파일 추가 -->
+    <link rel="icon" href="data:,">
+    <link rel="icon" type="image/x-icon" href="/admin-pro/dist/assets/img/favicon.png" th:href="@{/admin-pro/dist/assets/img/favicon.png}" />
+    <link href="/admin-pro/dist/css/tui/tui-grid.min.css" th:href="@{/admin-pro/dist/css/tui/tui-grid.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/admin-pro/dist/css/tui/toastui-chart.min.css" th:href="@{/admin-pro/dist/css/tui/toastui-chart.min.css}"/>
+    <link rel="stylesheet" href="/admin-pro/dist/css/tui/tui-pagination.css" th:href="@{/admin-pro/dist/css/tui/tui-pagination.css}"/>
+    <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
+    <link rel="stylesheet" href="/admin-pro/dist/css/jquery-ui.css" th:href="@{/admin-pro/dist/css/jquery-ui.css}"/>
+    <!-- TOAST UI Editor CDN URL(CSS)-->
+    <link rel="stylesheet" th:href="@{/admin-pro/dist/css/toastui-editor.min.css}"/>
+    <link rel="stylesheet" th:href="@{/admin-pro/dist/css/toastui-editor-viewer.min.css}"/>
+    <!--  jquery  -->
+    <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
+    <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
+    <!-- js 파일 추가 -->
+    <script type="text/javascript" src="/admin-pro/dist/js/tui/tui-code-snippet.min.js" th:src="@{/admin-pro/dist/js/tui/tui-code-snippet.min.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/tui/tui-grid.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/tui/tui-pagination.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/tui/toastui-chart.min.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/feather.min.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/scripts.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/toasts.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/bundle.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/all.min.js}"></script>
+    <script type="text/javascript" th:src="@{/admin-pro/dist/js/common.js}"></script>
+    <!-- csrf 대응 -->
+    <th:block th:if="${_csrf == null}">
+        <meta id="_csrf" name="_csrf" content="" />
+        <meta id="_csrf_header" name="_csrf_header" content="" />
+    </th:block>
+    <th:block th:if="${_csrf != null}">
+        <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+        <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </th:block>
+    <meta name="test2" content="test2" />
+</head>
+<body class="nav-fixed">
+    <th:block layout:fragment="modal" th:if="${isModal}"></th:block>
+    <th:block th:unless="${isModal}">
+        <th:block th:replace="fragments/commonHead :: nav"></th:block>
+        <div id="layoutSidenav">
+            <th:block th:replace="fragments/lnb :: lnb"></th:block>
+            <div id="layoutSidenav_content">
+                <th:block layout:fragment="content"></th:block>
+                <th:block th:replace="fragments/commonFooter :: footer"></th:block>
+            </div>
+        </div>
+    </th:block>
+</body>
+</html>

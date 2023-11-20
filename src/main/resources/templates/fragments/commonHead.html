@@ -1,0 +1,56 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<nav th:fragment="header" class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+    <!-- Sidenav Toggle Button-->
+    <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+    <!-- Navbar Brand-->
+    <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+    <!-- * * * * * * When using an image, we recommend the SVG format.-->
+    <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="/main">KBANK</a>
+    <ul class="navbar-nav align-items-center ms-auto">
+        <li th:each="item, index : ${#authentication.principal.menuList}" class="nav-item dropdown no-caret d-none d-md-block me-3">
+            <a th:if="${item.upMenuId eq '0000'}" class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="fw-500" th:text="${item.menuNm}"></div>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <div th:if="${item.upMenuId eq '0000'}" class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
+                <th:block th:each="small, sIndex : ${item.smallMenuList}">
+                    <a class="dropdown-item py-3" th:href="${small.menuPath}" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4"><i th:attrappend="data-feather=${small.icoNm}"></i></div>
+                        <div>
+                            <div class="small text-gray-500" th:text="${item.menuNm}"></div>
+                            [[${small.menuNm}]]
+                        </div>
+                    </a>
+                    <div th:if="${!sIndex.last}" class="dropdown-divider m-0"></div>
+                </th:block>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="/admin-pro/dist/assets/img/icons/user_icon.png" /></a>
+            <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                <h6 class="dropdown-header d-flex align-items-center">
+                    <img class="dropdown-user-img" src="/admin-pro/dist/assets/img/icons/user_icon.png" />
+                    <div class="dropdown-user-details">
+                        <div class="dropdown-user-details-name" sec:authentication="principal.usrNm"></div>
+                        <div class="dropdown-user-details-email" sec:authentication="principal.usrId"></div>
+                    </div>
+                </h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item pointer" href="/myPage">
+                    <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                    나의정보
+                </a>
+                <a class="dropdown-item pointer" href="/user/logout">
+                    <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                    로그아웃
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+</html>
+<script>
+
+</script>

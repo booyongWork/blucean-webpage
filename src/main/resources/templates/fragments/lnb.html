@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/defaultLayout}">
+
+
+<div th:fragment="lnb" id="layoutSidenav_nav">
+    <nav class="sidenav shadow-right sidenav-light">
+        <div class="sidenav-menu">
+            <div class="nav accordion" id="accordionSidenav">
+                <th:block th:each="item, index : ${#authentication.principal.menuList}">
+                    <div th:if="${item.upMenuId eq '0000' && index.first}" class="sidenav-menu-heading">
+<!--                        <th:block th:text="${item.menuNm}"></th:block>-->
+                    </div>
+                    <a th:if="${item.upMenuId eq '0000'}" class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
+                       th:attrappend="data-bs-target='#menu'+${item.menuId}" aria-expanded="false">
+                        <div class="nav-link-icon">
+                            <i th:attrappend="data-feather=${item.icoNm}"></i>
+                        </div>
+                        <th:block th:text="${item.menuNm}"></th:block>
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div th:if="${item.upMenuId eq '0000'}" class="collapse" th:attrappend="id='menu'+${item.menuId}">
+                        <nav class="sidenav-menu-nested nav accordion">
+                            <th:block th:each="small : ${item.smallMenuList}" >
+<!--                                <a class="nav-link pointer" th:text="${small.menuNm}" th:data-path="${small.menuPath}"></a>-->
+                                <a class="nav-link" th:href="${small.menuPath}" th:text="${small.menuNm}"></a>
+                            </th:block>
+                        </nav>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+        <!-- Sidenav Footer-->
+        <div class="sidenav-footer">
+            <div class="sidenav-footer-content">
+                <div class="sidenav-footer-subtitle">Logged in as:</div>
+                <div class="sidenav-footer-title" sec:authentication="principal.usrNm"></div>
+                <div class="sidenav-footer-subtitle" sec:authentication="principal.lstConnDdtmDate"></div>
+            </div>
+        </div>
+    </nav>
+</div>
+</html>
+
