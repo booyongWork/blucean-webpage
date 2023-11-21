@@ -118,6 +118,9 @@
     --bs-body-line-height: 1.5;
     --bs-body-color: #69707a;
     --bs-body-bg: #f2f6fc;
+    background-image: url('/img/background.jpg'); /* 이미지 경로를 정확히 지정해주세요. */
+    background-size: cover; /* 이미지를 화면에 맞게 조절합니다. */
+    background-repeat: no-repeat; /* 이미지 반복을 방지합니다. */
 }
 
 *,
@@ -133,16 +136,14 @@
 }
 
 body {
+    color: white;
     margin: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-    color: var(--bs-body-color);
-    text-align: var(--bs-body-text-align);
-    background-color: var(--bs-body-bg);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Pretendard-Regular';
+    /*background-color: #f0eef0;*/
+    /* 원하는 이미지의 URL을 설정합니다. */
+    background-image: url('/img/background.jpg'); /* 이미지 경로를 정확히 지정해주세요. */
+    background-size: cover; /* 이미지를 화면에 맞게 조절합니다. */
+    background-repeat: no-repeat; /* 이미지 반복을 방지합니다. */
 }
 
 hr {
@@ -240,7 +241,7 @@ ul {
 ol,
 ul,
 dl {
-    margin-top: 0;
+    /*margin-top: 0;*/
     margin-bottom: 1rem;
 }
 
@@ -295,13 +296,13 @@ sup {
 }
 
 a {
-    color: #2c11dd;
     text-decoration: none;
+    color: white;
 }
 
 a:hover {
-    color: #004ec2;
-    text-decoration: underline;
+    color: #dae7fb;
+    /*text-decoration: underline;*/
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -21378,7 +21379,7 @@ body {
 }
 
 .footer-admin.footer-light {
-    color: #a7aeb8;
+    color: #e0e5ec;
 }
 
 .nav .nav-link .nav-link-icon,
@@ -22885,4 +22886,100 @@ pre[class*=language-] {
 .selectBox-container {
     display: flex;
     justify-content: space-between;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+}
+
+.navbar__logo {
+    font-size: 24px;
+    /*color: black;*/
+    font-weight: 700;
+}
+
+.navbar__logo i {
+    /*color: black;*/
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    /*padding-left: 0;*/
+}
+
+.navbar__menu li{
+    padding: 8px 80px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.navbar__menu li:hover{
+    /*background-color: #d49466;*/
+    color: white;
+    border-radius: 4px;
+}
+
+.navbar__icons {
+    list-style: none;
+    color: white;
+    display: flex;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media screen and (max-width: 768px)  {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .navbar__toogleBtn {
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
 }
