@@ -1,5 +1,11 @@
 body {
     margin: 0;
+    font-family: 'Pretendard-Regular';
+    /*background-color: #f0eef0;*/
+    /* 원하는 이미지의 URL을 설정합니다. */
+    background-image: url('/img/background.jpg'); /* 이미지 경로를 정확히 지정해주세요. */
+    background-size: cover; /* 이미지를 화면에 맞게 조절합니다. */
+    background-repeat: no-repeat; /* 이미지 반복을 방지합니다. */
 }
 
 a {
@@ -11,17 +17,17 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #263343;
     padding: 8px 12px;
 }
 
 .navbar__logo {
-    font-size: 24px;
-    color: white;
+    /*font-size: 24px;*/
+    /*color: black;*/
+    /*font-weight: 700;*/
 }
 
 .navbar__logo i {
-    color: white;
+    /*color: black;*/
 }
 
 .navbar__menu {
@@ -31,11 +37,14 @@ a {
 }
 
 .navbar__menu li{
-    padding: 8px 12px;
+    padding: 8px 80px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .navbar__menu li:hover{
-    background-color: #d49466;
+    /*background-color: #d49466;*/
+    color: white;
     border-radius: 4px;
 }
 
@@ -54,7 +63,14 @@ a {
     position: absolute;
     right: 32px;
     font-size: 24px;
-    color: #d49466;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @media screen and (max-width: 768px)  {
