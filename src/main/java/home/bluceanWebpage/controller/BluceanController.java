@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HelloController {
+public class BluceanController {
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data", "hello!!");
@@ -16,5 +16,11 @@ public class HelloController {
     public String businessAreas() {
 
         return "views/businessAreas";
+    }
+
+    @GetMapping("solutionAreas")
+    public String solutionAreas() {
+
+        return "views/solutionAreas";
     }
 }
