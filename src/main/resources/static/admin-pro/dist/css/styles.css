@@ -22943,6 +22943,189 @@ pre[class*=language-] {
     color: white;
 }
 
+
+
+/*메인화면*/
+
+/*n-container*/
+.nContainer {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin: auto;
+    position: relative;
+    max-width: 1040px;
+}
+
+.mainSection {
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+}
+/*여기 높이를 정해놔야할 것 같음*/
+.mainSection1 {
+    height: 100vh;
+    position: relative;
+}
+
+.mainSection2 {
+
+}
+.mainTitleBox {
+    text-align: center;
+}
+
+.mainTitleBadge {
+    color: #408afd;
+    font-size: 23px;
+    padding-top: 90px;
+}
+
+.mainTitle {
+    color: #fff;
+    font-size: 65px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.subtitle {
+
+}
+
+.solutionBox {
+    display: flex;
+    justify-content: center;
+    position: relative
+}
+
+.solutionBorder {
+    width: 80%;
+    height: 784px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    overflow: hidden;
+}
+
+.solutionImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 2.3%;
+}
+
+.solutionImg img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.full {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+/*ab-area-left*/
+.areaLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    left: 0;
+}
+
+.textArea h1 {
+    font-size: 60px;
+    letter-spacing: -.02em;
+    font-weight: 700;
+    color: #1f2225;
+}
+
+.textArea h2 {
+    font-size: 60px;
+    letter-spacing: -.02em;
+    font-weight: 700;
+    color: #1f2225;
+}
+
+.textArea p {
+    color: #aaa;
+    line-height: 1.4em;
+}
+
+/*grapic-area*/
+.imgArea {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    max-width: 1600px;
+}
+
+.scrollDowns{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    margin: auto;
+    width: 30px;
+    height: 44px;
+    z-index: 1;
+}
+
+.mouse {
+    width: 2px;
+    padding: 4px 12px;
+    height: 28px;
+    border-radius: 12px;
+    opacity: .75;
+    box-sizing: content-box;
+}
+
+.scroller {
+    width: 2px;
+    height: 9px;
+    border-radius: 25%;
+    background-color: #1c222b;
+    animation-name: mouseScroll;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
+}
+
+.titleBadge {
+    font-size: 20px;
+    font-weight: 700;
+    border: 0;
+    margin: auto auto 24px;
+}
+
+.aboutBtn {
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 100px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c222b;
+    background-color: initial;
+    border: 1px solid #1c222b;
+}
+
+/*메인 끝*/
+
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -22984,3 +23167,4 @@ pre[class*=language-] {
         display: flex;
     }
 }
+
