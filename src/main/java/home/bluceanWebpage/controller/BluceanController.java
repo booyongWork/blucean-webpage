@@ -12,15 +12,15 @@ public class BluceanController {
         return "views/hello";
     }
 
-    @GetMapping("businessAreas")
-    public String businessAreas() {
+    @GetMapping("platformDev")
+    public String platformDev() {
 
-        return "views/businessAreas";
+        return "views/platformDev";
     }
 
-    @GetMapping("solutionAreas")
-    public String solutionAreas() {
+    @GetMapping("solutionDev")
+    public String solutionDev() {
 
-        return "views/solutionAreas";
+        return "views/solutionDev";
     }
 }
