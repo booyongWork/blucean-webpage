@@ -5,49 +5,67 @@
 <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
 <script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>
 <head>
-    <div th:replace="fragments/commonHead :: header"></div>
-    <title>The Blucean</title>
+<!--    <div th:replace="fragments/commonHead :: header"></div>-->
+<!--    <title>The Blucean</title>-->
+
 </head>
 <style>
-    :root{
-        background-image: url('/img/background.jpg'); /* 이미지 경로를 정확히 지정해주세요. */
-        background-size: cover; /* 이미지를 화면에 맞게 조절합니다. */
-        background-repeat: no-repeat; /* 이미지 반복을 방지합니다. */
-    }
+    /*:root{*/
+    /*    background-image: url('/img/background.jpg'); !* 이미지 경로를 정확히 지정해주세요. *!*/
+    /*    background-size: cover; !* 이미지를 화면에 맞게 조절합니다. *!*/
+    /*    background-repeat: no-repeat; !* 이미지 반복을 방지합니다. *!*/
+    /*}*/
 </style>
 <body>
-<main>
-    <!-- Main page content-->
-    <div class="wrap">
-        <div class="mainsection mainSection1">
-            <div class="mainTitleBox">
-                <p class="mainTitleBadge">Get your free consultaion now</p>
-                <p class="mainTitle">Doctor Appointment & <br/>Consultation Booking</p>
-                <p class="subtitle">Great doctor if you need your family member to get effective immediate<br> assistance, emergency treatment or a simpe consultaion</p>
-            </div>
-            <div class="solutionBox">
-                <div class="solutionBorder">
-                    <div class="solutionImg">
-                        <img src="/img/solutionS.png">
+    <header>
+        <div class="headerBackground">
+            <div class="headerWrap">
+                <a href="/" class="headerLogo">
+                    <img src="/img/logo.svg" alt="logo" width="140px">
+                </a>
+                <div class="nContainer">
+                    <ul class="headerList">
+                        <li><a href="">API솔루션 소개</a></li>
+                        <li><a href="">문의하기</a></li>
+                        <li><a href="">사업 분야</a></li>
+                    </ul>
+                </div>
+                <div class="headerRight">
+                    <div class="headerBtnWrap">
+                        <button class="hearderBtn btn btn-dark">신청현황조회</button>
+                    </div>
+                    <div class="">
+                        <button class="hearderBtn btn btn-dark">결제내역조회</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mainsection mainSection2" >
-            <div class="sectionContainer">
-                <div class="nContainer">
-                <div class="textArea" >
-                    <div style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">결제 A to Z</div>
-                    <h2 style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">사업 시작을 위해 준비된 <br> 모든 결제 서비스</h2>
-                </div>
-                </div>
-            </div>
-            <div class="imgArea">
-                <img src="/img/slide_1_04.2ea7c8f.png"/>
-            </div>
-        </div>
-        <div class="mainsection mainSection3" style="height: 900px; background-color: #ddd;">
+    </header>
 
+
+<main>
+    <!-- Main page content-->
+    <div id="wrap">
+        <div class="mainSection mainSection1">
+<!--            <div class="full"></div>-->
+            <div class="nContainer">
+                <div class="textArea areaLeft">
+                    <h2 style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">사업 시작을 위한 <br/>최고의 선택</h2>
+                    <h1 style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">더블루션</h1>
+                    <p class="mt-5" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0.3s; animation-name: fadeInUp;">API솔루션, SI, SM 등 <br/>다양한 서비스를 활용해 보세요!</p>
+                </div>
+                <div class="imgArea">
+                    <div class="imgBox">
+                        <img src="/img/solutionS.png" style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.3s; animation-name: fadeInUp; width: 800px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrollDowns">
+                <div class="mouse">
+                    <div class="scroller"></div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
