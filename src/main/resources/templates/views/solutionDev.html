@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
+<!--<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/ui-pro/dist/css/styles.css}"/>-->
 <!--  jquery  -->
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
 
-<script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!--<script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>-->
+<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>-->
+<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>-->
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>-->
 <head>
     <div th:replace="fragments/commonHead :: header"></div>
     <title>The Blucean</title>
 </head>
 <style>
-    :root{
-        color: black;
-    }
-
     body {
         color: black;
-        background-color: white;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .navbar {
         background-color: white;
     }
 
@@ -37,335 +25,396 @@
         width: 250px; /* 버튼의 너비를 150px로 설정 */
     }
 
-    .col-auto {
-        opacity: 0;
-        transform: translateY(0);
-        transition-duration: .8s;
-        transition-delay: .3s;
-    }
-
-    .col-auto.visible {
-        opacity: 2; /* 서서히 나타나도록 변경 */
-    }
-
-    #button-container2 {
-        white-space: nowrap; /* 줄 바꿈 방지 */
-        overflow-x: auto; /* 가로 스크롤바 표시 */
-    }
-
     #button-container > div {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
         display: inline-block; /* 요소들을 가로로 나열 */
         white-space: normal; /* 요소 내부의 공백 처리 */
         vertical-align: top; /* 요소 정렬 */
     }
+
+    .navbar {
+        background-color: #ffffff50;
+    }
+
+    /*.card {*/
+    /*    cursor: pointer;*/
+    /*}*/
 </style>
-    <body class="nav-fixed">
+<body class="nav-fixed">
 <!--        <div id="layoutSidenav">-->
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="col-auto text-center">
-                        <div class="button-container" id="button-container">
-                            <div><a class="btn btn-outline-dark rounded-0 me-2 my-1 btn-xl" href="/solutionDev">API SOLUTION</a></div>
-                            <div><a class="btn btn-outline-dark rounded-0 me-2 my-1 btn-xl" href="/platformDev">폴랫폼 개발</a></div>
-                            <div><a class="btn btn-outline-dark rounded-0 me-2 my-1 btn-xl" href="">폴랫폼 운영</a></div>
+<div>
+    <main>
+        <!--        <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">-->
+        <!--            <div class="page-header-ui-content pt-10">-->
+        <!--                <div class="container px-5">-->
+        <!--                    <div class="row gx-5 align-items-center">-->
+        <!--                        <div class="col-lg-6" data-aos="fade-up">-->
+        <!--                            <h1 class="page-header-ui-title">더블루션 API솔루션</h1>-->
+        <!--                            <h1 class="page-header-ui-title">더블루션 API솔루션</h1>-->
+        <!--                            <p class="page-header-ui-text mb-5">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</p>-->
+        <!--                            <p class="page-header-ui-text mb-5">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</p>-->
+        <!--&lt;!&ndash;                            <a class="btn btn-teal fw-500 me-2" href="#!">&ndash;&gt;-->
+        <!--&lt;!&ndash;                                Get Started&ndash;&gt;-->
+        <!--&lt;!&ndash;                                <i class="ms-2" data-feather="arrow-right"></i>&ndash;&gt;-->
+        <!--&lt;!&ndash;                            </a>&ndash;&gt;-->
+        <!--&lt;!&ndash;                            <a class="btn btn-link fw-500" href="#!">Learn More</a>&ndash;&gt;-->
+        <!--                        </div>-->
+        <!--                        <div class="col-lg-6 d-none d-lg-block" data-aos="fade-up" data-aos-delay="100"><img src="/img/Biz/windows.svg"></div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="svg-border-rounded text-white">-->
+        <!--                &lt;!&ndash; Rounded SVG Border&ndash;&gt;-->
+        <!--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>-->
+        <!--            </div>-->
+        <!--        </header>-->
+        <header class="page-header page-header-dark bg-blue-soft pb-10">
+            <div class="page-header-content pt-4" style="text-align: center;">
+                <div class="row align-items-center">
+                    <div class="button-container" id="button-container" style="margin-top: 5%;">
+                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/solutionDev">API 솔루션</a></div>
+                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/platformDev">폴랫폼 개발</a></div>
+                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="">폴랫폼 운영</a></div>
+                    </div>
+                    <div>
+                        <div class="page-header-subtitle" style="color: black; font-size: 50px; font-weight: bold; margin-top: 5%;">더블루션 API솔루션</div>
+                        <div class="page-header-compact" style="color: black; font-size: 30px; margin-bottom: 10%;">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main page content-->
+        <div class="container-xl px-4 mt-n10">
+            <div class="card card-waves mb-4 mt-0">
+                <div class="card card-waves mb-4 mt-5">
+                    <div class="card-body p-5">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col">
+                                <h2 class="text-primary">솔루션 관련 임의로 넣어놓은 이미지입니다.</h2>
+                                <p class="text-gray-700">Great job, your affiliate dashboard is ready to go! You can view sales, generate links, prepare coupons, and download affiliate reports using this dashboard.</p>
+                                <a class="btn btn-primary p-3" href="#!">
+                                    Get Started
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ms-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            </div>
+                            <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5" src="/img/Biz/statistics.svg"></div>
                         </div>
                     </div>
-                    <header class="page-header page-header-dark bg-blue-soft pb-10">
-                        <div class="container-xl px-4">
-                            <div class="page-header-content pt-4">
-                                <div class="row align-items-center">
-                                    <div style="font-size: 20px; color: #2196f3; margin-bottom: 5%;" class="text-start">통합 시뮬레이터 및 테스트 포털 구축 API</div>
-                                    <div class="col-md-6">
-                                        <div class="page-header-subtitle" style="color: black; font-size: 50px; margin-bottom: 5%;">더블루션의<br> API솔루션이 궁금하신가요?</div>
-                                    </div>
-                                    <div class="col-md-6 text-end">
-                                        <img src="/img/Biz/BestAPI.jpg" style="max-width: 35%; height: auto; border-radius: 15px;">
+                </div>
+                <div class="card-body p-5">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xxl-4 col-xl-12 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body h-100 p-5">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-8 col-xxl-12">
+                                            <div class="text-center text-xl-start text-xxl-center mb-4 mb-xl-0 mb-xxl-4">
+                                                <h1 class="text-primary">솔루션 관련 가이미지</h1>
+                                                <p class="text-gray-700 mb-0">Browse our fully designed UI toolkit! Browse our prebuilt app pages, components, and utilites, and be sure to look at our full documentation!</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="/img/Biz/at-work.svg" style="max-width: 26rem"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                    </header>
-                    <!-- Main page content-->
-                    <div class="container-xl px-4 mt-n10">
-                        <!-- Illustration dashboard card example-->
-                        <div class="card card-waves mb-4 mt-0">
-                            <div class="card card-waves mb-4 mt-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center justify-content-between">
-                                        <div class="col">
-                                            <h2 class="text-primary">Welcome back, your dashboard is ready!</h2>
-                                            <p class="text-gray-700">Great job, your affiliate dashboard is ready to go! You can view sales, generate links, prepare coupons, and download affiliate reports using this dashboard.</p>
-                                            <a class="btn btn-primary p-3" href="#!">
-                                                Get Started
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ms-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <div class="col-xxl-4 col-xl-6 mb-4">
+                            <div class="card card-header-actions h-100">
+                                <div class="card-header">
+                                    Recent Activity
+                                    <div class="dropdown no-caret">
+                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
+                                            <h6 class="dropdown-header">Filter Activity:</h6>
+                                            <a class="dropdown-item" href="#!"><span class="badge bg-green-soft text-green my-1">Commerce</span></a>
+                                            <a class="dropdown-item" href="#!"><span class="badge bg-blue-soft text-blue my-1">Reporting</span></a>
+                                            <a class="dropdown-item" href="#!"><span class="badge bg-yellow-soft text-yellow my-1">Server</span></a>
+                                            <a class="dropdown-item" href="#!"><span class="badge bg-purple-soft text-purple my-1">Users</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="timeline timeline-xs">
+                                        <!-- Timeline Item 1-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">27 min</div>
+                                                <div class="timeline-item-marker-indicator bg-green"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                New order placed!
+                                                <a class="fw-bold text-dark" href="#!">Order #2912</a>
+                                                has been successfully placed.
+                                            </div>
+                                        </div>
+                                        <!-- Timeline Item 2-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">58 min</div>
+                                                <div class="timeline-item-marker-indicator bg-blue"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                Your
+                                                <a class="fw-bold text-dark" href="#!">weekly report</a>
+                                                has been generated and is ready to view.
+                                            </div>
+                                        </div>
+                                        <!-- Timeline Item 3-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">2 hrs</div>
+                                                <div class="timeline-item-marker-indicator bg-purple"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                New user
+                                                <a class="fw-bold text-dark" href="#!">Valerie Luna</a>
+                                                has registered
+                                            </div>
+                                        </div>
+                                        <!-- Timeline Item 4-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">1 day</div>
+                                                <div class="timeline-item-marker-indicator bg-yellow"></div>
+                                            </div>
+                                            <div class="timeline-item-content">Server activity monitor alert</div>
+                                        </div>
+                                        <!-- Timeline Item 5-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">1 day</div>
+                                                <div class="timeline-item-marker-indicator bg-green"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                New order placed!
+                                                <a class="fw-bold text-dark" href="#!">Order #2911</a>
+                                                has been successfully placed.
+                                            </div>
+                                        </div>
+                                        <!-- Timeline Item 6-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">1 day</div>
+                                                <div class="timeline-item-marker-indicator bg-purple"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                Details for
+                                                <a class="fw-bold text-dark" href="#!">Marketing and Planning Meeting</a>
+                                                have been updated.
+                                            </div>
+                                        </div>
+                                        <!-- Timeline Item 7-->
+                                        <div class="timeline-item">
+                                            <div class="timeline-item-marker">
+                                                <div class="timeline-item-marker-text">2 days</div>
+                                                <div class="timeline-item-marker-indicator bg-green"></div>
+                                            </div>
+                                            <div class="timeline-item-content">
+                                                New order placed!
+                                                <a class="fw-bold text-dark" href="#!">Order #2910</a>
+                                                has been successfully placed.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-6 mb-4">
+                            <div class="card card-header-actions h-100">
+                                <div class="card-header">
+                                    Progress Tracker
+                                    <div class="dropdown no-caret">
+                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#!">
+                                                <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list text-gray-500"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div>
+                                                Manage Tasks
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle text-gray-500"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
+                                                Add New Task
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-circle text-gray-500"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
+                                                Delete Tasks
                                             </a>
                                         </div>
-                                        <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5" src="/img/Biz/statistics.svg"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-body p-5">
-                                <div class="row align-items-center justify-content-between">
-                                    <div class="col-xxl-4 col-xl-12 mb-4">
-                                        <div class="card h-100">
-                                            <div class="card-body h-100 p-5">
-                                                <div class="row align-items-center">
-                                                    <div class="col-xl-8 col-xxl-12">
-                                                        <div class="text-center text-xl-start text-xxl-center mb-4 mb-xl-0 mb-xxl-4">
-                                                            <h1 class="text-primary">Welcome to SB Admin Pro!</h1>
-                                                            <p class="text-gray-700 mb-0">Browse our fully designed UI toolkit! Browse our prebuilt app pages, components, and utilites, and be sure to look at our full documentation!</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="/img/Biz/at-work.svg" style="max-width: 26rem"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-4 col-xl-6 mb-4">
-                                        <div class="card card-header-actions h-100">
-                                            <div class="card-header">
-                                                Recent Activity
-                                                <div class="dropdown no-caret">
-                                                    <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
-                                                    <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
-                                                        <h6 class="dropdown-header">Filter Activity:</h6>
-                                                        <a class="dropdown-item" href="#!"><span class="badge bg-green-soft text-green my-1">Commerce</span></a>
-                                                        <a class="dropdown-item" href="#!"><span class="badge bg-blue-soft text-blue my-1">Reporting</span></a>
-                                                        <a class="dropdown-item" href="#!"><span class="badge bg-yellow-soft text-yellow my-1">Server</span></a>
-                                                        <a class="dropdown-item" href="#!"><span class="badge bg-purple-soft text-purple my-1">Users</span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="timeline timeline-xs">
-                                                    <!-- Timeline Item 1-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">27 min</div>
-                                                            <div class="timeline-item-marker-indicator bg-green"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            New order placed!
-                                                            <a class="fw-bold text-dark" href="#!">Order #2912</a>
-                                                            has been successfully placed.
-                                                        </div>
-                                                    </div>
-                                                    <!-- Timeline Item 2-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">58 min</div>
-                                                            <div class="timeline-item-marker-indicator bg-blue"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            Your
-                                                            <a class="fw-bold text-dark" href="#!">weekly report</a>
-                                                            has been generated and is ready to view.
-                                                        </div>
-                                                    </div>
-                                                    <!-- Timeline Item 3-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">2 hrs</div>
-                                                            <div class="timeline-item-marker-indicator bg-purple"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            New user
-                                                            <a class="fw-bold text-dark" href="#!">Valerie Luna</a>
-                                                            has registered
-                                                        </div>
-                                                    </div>
-                                                    <!-- Timeline Item 4-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">1 day</div>
-                                                            <div class="timeline-item-marker-indicator bg-yellow"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">Server activity monitor alert</div>
-                                                    </div>
-                                                    <!-- Timeline Item 5-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">1 day</div>
-                                                            <div class="timeline-item-marker-indicator bg-green"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            New order placed!
-                                                            <a class="fw-bold text-dark" href="#!">Order #2911</a>
-                                                            has been successfully placed.
-                                                        </div>
-                                                    </div>
-                                                    <!-- Timeline Item 6-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">1 day</div>
-                                                            <div class="timeline-item-marker-indicator bg-purple"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            Details for
-                                                            <a class="fw-bold text-dark" href="#!">Marketing and Planning Meeting</a>
-                                                            have been updated.
-                                                        </div>
-                                                    </div>
-                                                    <!-- Timeline Item 7-->
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-item-marker">
-                                                            <div class="timeline-item-marker-text">2 days</div>
-                                                            <div class="timeline-item-marker-indicator bg-green"></div>
-                                                        </div>
-                                                        <div class="timeline-item-content">
-                                                            New order placed!
-                                                            <a class="fw-bold text-dark" href="#!">Order #2910</a>
-                                                            has been successfully placed.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-4 col-xl-6 mb-4">
-                                        <div class="card card-header-actions h-100">
-                                            <div class="card-header">
-                                                Progress Tracker
-                                                <div class="dropdown no-caret">
-                                                    <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
-                                                    <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#!">
-                                                            <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list text-gray-500"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div>
-                                                            Manage Tasks
-                                                        </a>
-                                                        <a class="dropdown-item" href="#!">
-                                                            <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle text-gray-500"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
-                                                            Add New Task
-                                                        </a>
-                                                        <a class="dropdown-item" href="#!">
-                                                            <div class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-circle text-gray-500"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
-                                                            Delete Tasks
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="small">
-                                                    Server Migration
-                                                    <span class="float-end fw-bold">20%</span>
-                                                </h4>
-                                                <div class="progress mb-4"><div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div>
-                                                <h4 class="small">
-                                                    Sales Tracking
-                                                    <span class="float-end fw-bold">40%</span>
-                                                </h4>
-                                                <div class="progress mb-4"><div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
-                                                <h4 class="small">
-                                                    Customer Database
-                                                    <span class="float-end fw-bold">60%</span>
-                                                </h4>
-                                                <div class="progress mb-4"><div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
-                                                <h4 class="small">
-                                                    Payout Details
-                                                    <span class="float-end fw-bold">80%</span>
-                                                </h4>
-                                                <div class="progress mb-4"><div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
-                                                <h4 class="small">
-                                                    Account Setup
-                                                    <span class="float-end fw-bold">Complete!</span>
-                                                </h4>
-                                                <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-<!--                                    <div class="col">-->
-<!--                                        <h2 class="text-primary" style="color: black;">Solution Description</h2>-->
-<!--                                        <h2 class="text-primary">Solution Description</h2>-->
-<!--                                        <h2 class="text-primary">Solution Description</h2>-->
-<!--                                        <h2 class="text-primary">Solution Description</h2>-->
-<!--                                        <h2 class="text-primary">Solution Description</h2>-->
-<!--                                        <h2 class="text-primary">Solution Description</h2>-->
-
-<!--                                    </div>-->
+                                <div class="card-body">
+                                    <h4 class="small">
+                                        Server Migration
+                                        <span class="float-end fw-bold">20%</span>
+                                    </h4>
+                                    <div class="progress mb-4"><div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    <h4 class="small">
+                                        Sales Tracking
+                                        <span class="float-end fw-bold">40%</span>
+                                    </h4>
+                                    <div class="progress mb-4"><div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    <h4 class="small">
+                                        Customer Database
+                                        <span class="float-end fw-bold">60%</span>
+                                    </h4>
+                                    <div class="progress mb-4"><div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    <h4 class="small">
+                                        Payout Details
+                                        <span class="float-end fw-bold">80%</span>
+                                    </h4>
+                                    <div class="progress mb-4"><div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    <h4 class="small">
+                                        Account Setup
+                                        <span class="float-end fw-bold">Complete!</span>
+                                    </h4>
+                                    <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 200px;">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="me-3">
-                                <!-- 어울리는 이미지로 대체예정 -->
-<!--                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>-->
-                                <div class="text-center">
-                                    <img src="/img/Biz/icons8-q&a-64.png">
-                                </div>
-                                <h1 class="text-center" style="color: black">
-                                    SOLUTION FAQ
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-xl px-4">
-                        <!-- Knowledge base article-->
-                        <div class="card mb-4">
-                            <div class="card-header d-flex align-items-center">
-                                <div class="ms-3"><h2 class="my-3">Q.웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2></div>
-                            </div>
-                            <div class="card-body">
-                                <p class="lead">A.Here's an example of what an article in your knowledge base will look like.</p>
-                                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-                                    <div class="alert-icon-aside"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-xl px-4">
-                        <!-- Knowledge base article-->
-                        <div class="card mb-4">
-                            <div class="card-header d-flex align-items-center">
-                                <div class="ms-3"><h2 class="my-3">Q.웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2></div>
-                            </div>
-                            <div class="card-body">
-                                <p class="lead">A.Here's an example of what an article in your knowledge base will look like.</p>
-                                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-                                <div class="alert-icon-aside"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-xl px-4">
-                        <!-- Knowledge base article-->
-                        <div class="card mb-4">
-                            <div class="card-header d-flex align-items-center">
-                                <div class="ms-3"><h2 class="my-3">Q.웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2></div>
-                            </div>
-                            <div class="card-body">
-                                <p class="lead">A.Here's an example of what an article in your knowledge base will look like.</p>
-                                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-                                <div class="alert-icon-aside"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 200px;">
-                        <div class="d-flex align-items-center justify-content-center flex-column">
-                            <h3 class="text-start" style="color: #2196f3">
-                                시작부터 성공까지
-                            </h3>
-                            <h1 class="text-start" style="color: black">
-                                더블루션과 함께
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="text-center" style="margin-bottom: 350px">
-                        <img src="/img/Biz/kbank.png" alt="logo">
-                        <img src="/img/Biz/kbankBlack.png" alt="logo">
-                    </div>
-                </main>
-                <footer th:fragment="footer">
-                    <div th:replace="fragments/commonFooter :: footer"></div>
-                </footer>
+                </div>
             </div>
-    </body>
+        </div>
+        <!-- faq 스크롤 버젼 -->
+        <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="me-3">
+                    <!-- todo.어울리는 이미지로 대체예정 -->
+                    <!--                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>-->
+                    <div class="text-center">
+                        <!--                                                            <img src="/img/Biz/icons8-q&a-64.png">-->
+                    </div>
+                    <h1 class="text-center" style="color: black">
+                        API SOLUTION FAQ
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl px-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>
+                        <div style="display: flex; align-items: center;">
+                            <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="accordionBody" style="display: none;">
+                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl px-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>
+                        <div style="display: flex; align-items: center;">
+                            <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="accordionBody2" style="display: none;">
+                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl px-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>
+                        <div style="display: flex; align-items: center;">
+                            <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="accordionBody3" style="display: none;">
+                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                </div>
+            </div>
+        </div>
+        <!-- faq part 끝 -->
+        <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3 class="text-start" style="color: #2196f3">
+                    시작부터 성공까지
+                </h3>
+                <h1 class="text-start" style="color: black">
+                    더블루션과 함께
+                </h1>
+            </div>
+        </div>
+        <div class="text-center" style="margin-bottom: 350px">
+            <img src="/img/Biz/kbank.png" alt="logo">
+            <img src="/img/Biz/kbankBlack.png" alt="logo">
+        </div>
+    </main>
+    <footer th:fragment="footer">
+        <div th:replace="fragments/commonFooter :: footer"></div>
+    </footer>
+</div>
+</body>
 </html>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let element = document.querySelector('.col-auto');
-        element.classList.add('visible');
+    // 화면 줄였을때 메뉴바
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const toggleButton = document.querySelector('.navbar__toogleBtn');
+    //     const menu = document.querySelector('.navbar__menu');
+    //
+    //     toggleButton.addEventListener('click', function() {
+    //         menu.classList.toggle('active');
+    //     });
+    // });
+
+    // FAQ 아코디언 클릭하는 버전
+    // function toggleAccordion(clickedElement) {
+    //     const accordionBody = clickedElement.nextElementSibling;
+    //     const icon = clickedElement.querySelector('span');
+    //     const isClosing = accordionBody.style.display === 'block';
+    //
+    //     // 클릭한 아코디언이 열려있는 경우 닫기
+    //     if (isClosing) {
+    //         accordionBody.style.display = 'none';
+    //         icon.textContent = '▼'; // 닫혔을 때 아이콘 변경
+    //     } else {
+    //         // 클릭한 아코디언만 열기
+    //         accordionBody.style.display = 'block';
+    //         icon.textContent = '◀'; // 열렸을 때 아이콘 변경
+    //     }
+    // }
+
+    // FAQ 아코디언 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', function() {
+        const scrollPositionToShowAnswer = document.documentElement.scrollHeight * 0.3;
+        const scrollPositionToShowAnswer2 = document.documentElement.scrollHeight * 0.5;
+        const scrollPositionToShowAnswer3 = document.documentElement.scrollHeight * 0.7;
+        const currentScroll = window.scrollY || window.pageYOffset;
+
+        const accordionBody = document.getElementById('accordionBody');
+        const accordionBody2 = document.getElementById('accordionBody2');
+        const accordionBody3 = document.getElementById('accordionBody3');
+
+        if (currentScroll > scrollPositionToShowAnswer) {
+            accordionBody.style.display = 'block';
+        } else {
+            accordionBody.style.display = 'none';
+        }
+
+        if (currentScroll >= scrollPositionToShowAnswer2) {
+            accordionBody2.style.display = 'block';
+        } else {
+            accordionBody2.style.display = 'none';
+        }
+
+        if (currentScroll >= scrollPositionToShowAnswer3) {
+            accordionBody3.style.display = 'block';
+        } else {
+            accordionBody3.style.display = 'none';
+        }
     });
+
 </script>
