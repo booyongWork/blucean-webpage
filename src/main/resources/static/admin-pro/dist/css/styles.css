@@ -709,6 +709,7 @@ progress {
     color: #69707a;
 }
 
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -721,6 +722,8 @@ progress {
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+
+
 }
 
 @media (min-width: 576px) {
@@ -6459,6 +6462,22 @@ textarea.form-control-lg {
     flex-basis: 100%;
     flex-grow: 1;
     align-items: center;
+}
+
+/*kcp nav list style 추가 */
+.nav-list {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.nav-list li {
+    margin-right: 58px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative
 }
 
 .navbar-toggler {
@@ -22839,26 +22858,40 @@ pre[class*=language-] {
     justify-content: space-between;
 }
 
-
+/*kcp style 반영*/
 .navbar {
     width: 100%;
-    height: 50px;
+    height: 80px;
+    top: 0;
+    left: 0;
     background-color: #ffffff50;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #fff;
-    display: flex;
+    display: block;
     position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 70px;
-    /*background-color: #061336;*/
     z-index: 10;
+    transition: all .1s ease-in-out;
+    transform: translateY(0);
+
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*padding: 40px 70px;*/
+    /*background-color: #061336;*/
+
+
+    /*min-width: 1040px;*/
 }
 
 .navbar__logo {
-    font-size: 24px;
-    /*color: black;*/
-    font-weight: 700;
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    /*font-size: 24px;*/
+    /*!*color: black;*!*/
+    /*font-weight: 700;*/
 }
 
 .navbar__logo i {
@@ -22904,6 +22937,15 @@ pre[class*=language-] {
 
 
 /*main.html*/
+.f-48 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.f-70 {
+    font-size: 60px;
+    font-weight: 700;
+}
 /* 메뉴 */
 header {
     display:block;
@@ -22982,6 +23024,7 @@ header {
     position: relative;
     transition: all .15s ease-in-out;
 }
+
 /*메인*/
 #wrap {
     /*margin-top: 80px;*/
@@ -23037,7 +23080,7 @@ header {
     color: #1f2225;
 }
 
-.textArea h2 {
+.textArea .mainTitle {
     font-size: 60px;
     letter-spacing: -.02em;
     font-weight: 700;
@@ -23121,6 +23164,7 @@ header {
 }
 
 .titleBadge {
+    color: #2196f3;
     font-size: 20px;
     font-weight: 700;
     border: 0;
@@ -23231,6 +23275,46 @@ header {
     url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff2') format('woff2'),
     url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff') format('woff');
     font-display: swap;
+}
+
+/* kcp 반응형웹 */
+@media (max-width: 1400px) {
+    header {
+        min-width: 1000px;
+    }
+    header .headerWrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    header .nContainer {
+        padding-left: 140px;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 1280px) {
+    body {
+        min-width: 1000px;
+    }
+    .n-container {
+        min-width: 960px;
+        max-width: 960px;
+    }
+
+    .mainSection1 .imgArea img, .mainSection2 .imgArea img {
+        right: -120px;
+        width: 800px;
+    }
+
+    .mainSection2 {
+        height: 760px;
+    }
+
+    .mainSection3 {
+        width: 720px;
+        left: 37%;
+    }
 }
 
 @media screen and (max-width: 768px)  {
