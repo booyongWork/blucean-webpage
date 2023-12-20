@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
 <script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>
 <head>
-<!--    <div th:replace="fragments/commonHead :: header"></div>-->
+
 <!--    <title>The Blucean</title>-->
 
 </head>
@@ -17,31 +17,8 @@
     /*}*/
 </style>
 <body>
-    <header>
-        <div class="headerBackground">
-            <div class="headerWrap">
-                <a href="/" class="headerLogo">
-                    <img src="/img/logo.svg" alt="logo" width="140px">
-                </a>
-                <div class="nContainer">
-                    <ul class="headerList">
-                        <li><a href="">API솔루션 소개</a></li>
-                        <li><a href="">문의하기</a></li>
-                        <li><a href="">사업 분야</a></li>
-                    </ul>
-                </div>
-                <div class="headerRight">
-                    <div class="headerBtnWrap">
-                        <button class="hearderBtn btn btn-dark">신청현황조회</button>
-                    </div>
-                    <div class="">
-                        <button class="hearderBtn btn btn-dark">결제내역조회</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
+    <div th:replace="fragments/commonHead :: header"></div>
     <main>
         <!-- Main page content-->
         <div id="wrap">

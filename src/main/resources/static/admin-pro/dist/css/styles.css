@@ -22937,6 +22937,11 @@ pre[class*=language-] {
 
 
 /*main.html*/
+.f-32 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .f-48 {
     font-size: 48px;
     font-weight: 700;
@@ -23186,6 +23191,15 @@ header {
 }
 
 /*메인 끝*/
+
+/* solutionDev */
+.buttonArea button {
+    width: 250px;
+}
+.buttonArea button a{
+    color:#fff;
+}
+/* solutionDev 끝 */
 
 @font-face {
     font-family: 'Pretendard';
