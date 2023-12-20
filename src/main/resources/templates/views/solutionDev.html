@@ -36,6 +36,41 @@
         background-color: #ffffff50;
     }
 
+    /* 초기에는 아코디언 요소를 숨겨두기 */
+    .accordion-content {
+        flex: 1 1 auto;
+        padding: 1.5rem 2.5rem;
+        display: none;
+    }
+    /* 보여줘야 할 때 클래스로 보이도록 변경 */
+    .show {
+        display: block;
+    }
+
+    .image-container {
+        margin-top: 5%;
+        margin-bottom: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #logoDefault,
+    #logoBlack {
+        opacity: 0; /* 초기에는 투명도를 0으로 설정하여 숨김 */
+        position: absolute; /* 위치 조정을 위해 절대 위치 지정 */
+        transition: opacity 1.5s ease-in-out; /* 페이드인 지속 시간을 늘림 */
+    }
+
+    #logoDefault {
+        opacity: 1; /* 초기에 logoDefault 이미지를 보이도록 설정 */
+    }
+
+    #logoBlack {
+        z-index: 1; /* logoBlack을 위로 올려서 보이도록 설정 */
+    }
+
     /*.card {*/
     /*    cursor: pointer;*/
     /*}*/
@@ -44,45 +79,34 @@
 <!--        <div id="layoutSidenav">-->
 <div>
     <main>
-        <!--        <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">-->
-        <!--            <div class="page-header-ui-content pt-10">-->
-        <!--                <div class="container px-5">-->
-        <!--                    <div class="row gx-5 align-items-center">-->
-        <!--                        <div class="col-lg-6" data-aos="fade-up">-->
-        <!--                            <h1 class="page-header-ui-title">더블루션 API솔루션</h1>-->
-        <!--                            <h1 class="page-header-ui-title">더블루션 API솔루션</h1>-->
-        <!--                            <p class="page-header-ui-text mb-5">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</p>-->
-        <!--                            <p class="page-header-ui-text mb-5">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</p>-->
-        <!--&lt;!&ndash;                            <a class="btn btn-teal fw-500 me-2" href="#!">&ndash;&gt;-->
-        <!--&lt;!&ndash;                                Get Started&ndash;&gt;-->
-        <!--&lt;!&ndash;                                <i class="ms-2" data-feather="arrow-right"></i>&ndash;&gt;-->
-        <!--&lt;!&ndash;                            </a>&ndash;&gt;-->
-        <!--&lt;!&ndash;                            <a class="btn btn-link fw-500" href="#!">Learn More</a>&ndash;&gt;-->
-        <!--                        </div>-->
-        <!--                        <div class="col-lg-6 d-none d-lg-block" data-aos="fade-up" data-aos-delay="100"><img src="/img/Biz/windows.svg"></div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="svg-border-rounded text-white">-->
-        <!--                &lt;!&ndash; Rounded SVG Border&ndash;&gt;-->
-        <!--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>-->
-        <!--            </div>-->
-        <!--        </header>-->
-        <header class="page-header page-header-dark bg-blue-soft pb-10">
-            <div class="page-header-content pt-4" style="text-align: center;">
-                <div class="row align-items-center">
-                    <div class="button-container" id="button-container" style="margin-top: 5%;">
-                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/solutionDev">API 솔루션</a></div>
-                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/platformDev">폴랫폼 개발</a></div>
-                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="">폴랫폼 운영</a></div>
-                    </div>
-                    <div>
-                        <div class="page-header-subtitle" style="color: black; font-size: 50px; font-weight: bold; margin-top: 5%;">더블루션 API솔루션</div>
-                        <div class="page-header-compact" style="color: black; font-size: 30px; margin-bottom: 10%;">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</div>
-                    </div>
+        <div class="page-header-content pt-4" style="text-align: center;">
+            <div class="row align-items-center">
+                <div class="button-container" id="button-container" style="margin-top: 5%;">
+                    <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/solutionDev">API 솔루션</a></div>
+                    <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/platformDev">폴랫폼 개발</a></div>
+                    <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="">폴랫폼 운영</a></div>
+                </div>
+                <div>
+                    <div class="page-header-subtitle" style="color: black; font-size: 50px; font-weight: bold; margin-top: 5%;">더블루션 API솔루션</div>
+                    <div class="page-header-compact" style="color: black; font-size: 30px; margin-bottom: 10%;">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</div>
                 </div>
             </div>
-        </header>
+        </div>
+<!--        <header class="page-header page-header-dark pb-10">-->
+<!--            <div class="page-header-content pt-4" style="text-align: center;">-->
+<!--                <div class="row align-items-center">-->
+<!--                    <div class="button-container" id="button-container" style="margin-top: 5%;">-->
+<!--                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/solutionDev">API 솔루션</a></div>-->
+<!--                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="/platformDev">폴랫폼 개발</a></div>-->
+<!--                        <div><a class="btn btn btn-dark rounded-3 me-2 my-1 btn-xl" href="">폴랫폼 운영</a></div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div class="page-header-subtitle" style="color: black; font-size: 50px; font-weight: bold; margin-top: 5%;">더블루션 API솔루션</div>-->
+<!--                        <div class="page-header-compact" style="color: black; font-size: 30px; margin-bottom: 10%;">통합 시뮬레이터 및 테스트 포털 구축 API입니다.</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </header>-->
         <!-- Main page content-->
         <div class="container-xl px-4 mt-n10">
             <div class="card card-waves mb-4 mt-0">
@@ -274,6 +298,71 @@
                 </div>
             </div>
         </div>
+
+        <!-- faq 클릭버전 -->
+<!--        <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 200px;">-->
+<!--            <div class="d-flex align-items-center justify-content-between">-->
+<!--                <div class="me-3">-->
+<!--                    &lt;!&ndash; todo.어울리는 이미지로 대체예정 &ndash;&gt;-->
+<!--                    &lt;!&ndash;                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>&ndash;&gt;-->
+<!--                    <div class="text-center">-->
+<!--                                                            <img src="/img/Biz/icons8-q&a-64.png">-->
+<!--                    </div>-->
+<!--                    <h1 class="text-center" style="color: black">-->
+<!--                        SOLUTION FAQ (클릭 Version)-->
+<!--                    </h1>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="container-xl px-4">-->
+<!--            <div class="card mb-4">-->
+<!--                <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">-->
+<!--                    <div class="w-100 d-flex justify-content-between align-items-center">-->
+<!--                        <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>-->
+<!--                        <div style="display: flex; align-items: center;">-->
+<!--                            <span style="vertical-align: middle;">▼</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="card-body accordion-body" style="display: none;">-->
+<!--                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+<!--                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="container-xl px-4">-->
+<!--            <div class="card mb-4">-->
+<!--                <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">-->
+<!--                    <div class="w-100 d-flex justify-content-between align-items-center">-->
+<!--                        <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>-->
+<!--                        <div style="display: flex; align-items: center;">-->
+<!--                            <span style="vertical-align: middle;">▼</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="card-body accordion-body" style="display: none;">-->
+<!--                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+<!--                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="container-xl px-4">-->
+<!--            <div class="card mb-4">-->
+<!--                <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">-->
+<!--                    <div class="w-100 d-flex justify-content-between align-items-center">-->
+<!--                        <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>-->
+<!--                        <div style="display: flex; align-items: center;">-->
+<!--                            <span style="vertical-align: middle;">▼</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="card-body accordion-body" style="display: none;">-->
+<!--                    <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+<!--                    <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
         <!-- faq 스크롤 버젼 -->
         <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
             <div class="d-flex align-items-center justify-content-between">
@@ -299,7 +388,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body" id="accordionBody" style="display: none;">
+                <div class="accordion-content" id="accordionBody" style="display: none;">
                     <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
                     <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
                 </div>
@@ -315,7 +404,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body" id="accordionBody2" style="display: none;">
+                <div class="accordion-content" id="accordionBody2" style="display: none;">
                     <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
                     <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
                 </div>
@@ -331,7 +420,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body" id="accordionBody3" style="display: none;">
+                <div class="accordion-content" id="accordionBody3" style="display: none;">
                     <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
                     <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
                 </div>
@@ -348,9 +437,9 @@
                 </h1>
             </div>
         </div>
-        <div class="text-center" style="margin-bottom: 350px">
-            <img src="/img/Biz/kbank.png" alt="logo">
-            <img src="/img/Biz/kbankBlack.png" alt="logo">
+        <div class="image-container">
+            <img id="logoDefault" src="/img/Biz/kbank.png" alt="logo">
+            <img id="logoBlack" src="/img/Biz/kbankBlack.png" alt="logo">
         </div>
     </main>
     <footer th:fragment="footer">
@@ -389,32 +478,52 @@
 
     // FAQ 아코디언 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', function() {
-        const scrollPositionToShowAnswer = document.documentElement.scrollHeight * 0.3;
-        const scrollPositionToShowAnswer2 = document.documentElement.scrollHeight * 0.5;
-        const scrollPositionToShowAnswer3 = document.documentElement.scrollHeight * 0.7;
         const currentScroll = window.scrollY || window.pageYOffset;
+        const scrollPercentage = currentScroll / (document.documentElement.scrollHeight - window.innerHeight);
 
+        // const showThreshold = 0.1; // 보여줄 위치의 임계값
+
+        // 첫 번째 요소
         const accordionBody = document.getElementById('accordionBody');
+        if (scrollPercentage >= 0.6 && scrollPercentage < 0.7) {
+            toggleAccordion(accordionBody);
+        }
+
+        // 두 번째 요소
         const accordionBody2 = document.getElementById('accordionBody2');
+        if (scrollPercentage >= 0.7 && scrollPercentage < 0.8) {
+            toggleAccordion(accordionBody2);
+        }
+
+        // 세 번째 요소
         const accordionBody3 = document.getElementById('accordionBody3');
-
-        if (currentScroll > scrollPositionToShowAnswer) {
-            accordionBody.style.display = 'block';
-        } else {
-            accordionBody.style.display = 'none';
-        }
-
-        if (currentScroll >= scrollPositionToShowAnswer2) {
-            accordionBody2.style.display = 'block';
-        } else {
-            accordionBody2.style.display = 'none';
-        }
-
-        if (currentScroll >= scrollPositionToShowAnswer3) {
-            accordionBody3.style.display = 'block';
-        } else {
-            accordionBody3.style.display = 'none';
+        if (scrollPercentage >= 0.8 && scrollPercentage < 1.0) {
+            toggleAccordion(accordionBody3);
         }
     });
+
+    function toggleAccordion(element) {
+        const accordions = document.querySelectorAll('.accordion-content');
+        accordions.forEach(acc => acc.style.display = 'none'); // 모든 아코디언 요소를 숨김
+
+        element.style.display = 'block'; // 특정 아코디언 요소만 보이도록 변경
+    }
+
+    //로고 show hide
+    const logoDefault = document.getElementById('logoDefault');
+    const logoBlack = document.getElementById('logoBlack');
+
+    let showLogoDefault = true;
+
+    setInterval(function () {
+        if (showLogoDefault) {
+            logoDefault.style.opacity = '1'; // 페이드인되도록 투명도를 1로 변경
+            logoBlack.style.opacity = '0'; // 다른 이미지는 투명도를 0으로 설정하여 숨김
+        } else {
+            logoDefault.style.opacity = '0';
+            logoBlack.style.opacity = '1';
+        }
+        showLogoDefault = !showLogoDefault; // 이미지를 반대로 전환
+    }, 2000); // 3초마다 이미지 전환
 
 </script>
