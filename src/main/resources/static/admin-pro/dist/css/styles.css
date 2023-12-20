@@ -22996,7 +22996,8 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
-    position: relative
+    position: relative;
+    color: #1f2225;
 }
 
 .headerList li a {
