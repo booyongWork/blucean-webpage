@@ -18,6 +18,12 @@ public class BluceanController {
         return "views/platformDev";
     }
 
+    @GetMapping("platformOps")
+    public String platformOps() {
+
+        return "views/platformOps";
+    }
+
     @GetMapping("solutionDev")
     public String solutionDev() {
 

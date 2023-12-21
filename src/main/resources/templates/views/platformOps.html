@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
+<!--<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/ui-pro/dist/css/styles.css}"/>-->
+<!--  jquery  -->
+<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
+<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
+<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
+
+<!--<script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>-->
+<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>-->
+<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>-->
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>-->
+<head>
+
+    <title>The Blucean</title>
+</head>
+<style>
+    body {
+        color: black;
+        background-color: white;
+    }
+
+    .scrolling-wrapper {
+        overflow-x: auto; /* 가로 스크롤을 위한 영역 */
+        overflow-x: hidden; /* 가로 스크롤바 숨기기 */
+        white-space: nowrap; /* 요소들을 가로로 나란히 위치하도록 설정 */
+        animation: scroll-left 10s linear infinite; /* scroll-left 애니메이션 적용 */
+        margin: 0 auto; /* 중앙 정렬을 위해 추가된 코드입니다. */
+    }
+
+    @keyframes scroll-left {
+        0% { transform: translateX(0); } /* 초기 위치 */
+        100% { transform: translateX(-100%); } /* 왼쪽으로 이동 */
+    }
+
+    /* 카드 스타일을 필요에 따라 추가 정의 */
+    .col-xl-3 {
+        display: inline-block;
+        width: 23%; /* 가로로 나열되는 각 카드의 너비 */
+    }
+</style>
+<body>
+<!--        <div id="layoutSidenav">-->
+<div th:replace="fragments/commonHead :: header"></div>
+<main>
+    <div class="wrap" style="padding: 180px 0 60px;">
+        <div class="nContainer">
+            <div class="textArea" style="text-align: center;">
+                <h2 class="f-48" style="font-weight: 800">더블루션 플랫폼 운영</h2>
+                <p>변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
+            </div>
+            <div class="buttonArea row" style="text-align: center">
+                <div style="margin-top: 3%;">
+                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
+                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
+                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'" style="background-color: #2196f3; color: white;">폴랫폼 운영</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main page content-->
+<!--    <div class="nContainer">-->
+        <div class="row">
+            <div class="pricing-columns row justify-content-center">
+                <div class="scrolling-wrapper">
+                    <div class="col-xl-3 col-lg-4 mb-4">
+                        <!-- 카드 1 -->
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                <div class="pricing-columns-price">
+                                    <!--                                <img src="/img/Biz/img_s1_01.png" alt="logo" style="display: block; margin: 0 auto;">-->
+                                    img
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                    <li class="list-group-item">
+                                        신세계 I&C API 플랫폼 개발
+                                        <br>2023년~</br>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 mb-4">
+                        <!-- 카드 1 -->
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                <div class="pricing-columns-price">
+                                    <!--                                <img src="/img/Biz/img_s1_01.png" alt="logo" style="display: block; margin: 0 auto;">-->
+                                    img
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                    <li class="list-group-item">
+                                        신세계 I&C API 플랫폼 개발
+                                        <br>2023년~</br>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 mb-4">
+                        <!-- 카드 1 -->
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                <div class="pricing-columns-price">
+                                    <!--                                <img src="/img/Biz/img_s1_01.png" alt="logo" style="display: block; margin: 0 auto;">-->
+                                    img
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                    <li class="list-group-item">
+                                        신세계 I&C API 플랫폼 개발
+                                        <br>2023년~</br>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 mb-4">
+                        <!-- 카드 1 -->
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                <div class="pricing-columns-price">
+                                    <!--                                <img src="/img/Biz/img_s1_01.png" alt="logo" style="display: block; margin: 0 auto;">-->
+                                    img
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                    <li class="list-group-item">
+                                        신세계 I&C API 플랫폼 개발
+                                        <br>2023년~</br>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 mb-4">
+                        <!-- 카드 1 -->
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                <div class="pricing-columns-price">
+                                    <!--                                <img src="/img/Biz/img_s1_01.png" alt="logo" style="display: block; margin: 0 auto;">-->
+                                    img
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                                    <li class="list-group-item">
+                                        신세계 I&C API 플랫폼 개발
+                                        <br>2023년~</br>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--        </div>-->
+    </div>
+</main>
+<footer th:fragment="footer">
+    <div th:replace="fragments/commonFooter :: footer"></div>
+</footer>
+</body>
+</html>
+<script>
+
+</script>
