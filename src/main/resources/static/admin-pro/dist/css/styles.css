@@ -17530,6 +17530,8 @@ body {
 
 body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #layoutAuthentication {
@@ -23053,14 +23055,28 @@ main {
     position: relative;
     overflow: hidden;
 }
+
+#mainSection1 {
+    scroll-behavior: smooth;
+}
+
 /*여기 높이를 정해놔야할 것 같음*/
 .mainSection1 {
     height: 100vh;
     position: relative;
+
 }
 
 .mainSection2 {
 
+}
+
+#mainSection3 {
+    scroll-behavior: smooth;
+}
+
+#mainSection6 {
+    scroll-behavior: smooth;
 }
 
 .full {
@@ -23238,6 +23254,7 @@ footer {
 }
 #introFooter .footerTop {
     padding: 24px 0 22px;
+    margin: 0;
     display: flex;
     border-bottom: 1px solid #e9f0f4;
     list-style: none;
