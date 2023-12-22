@@ -23034,6 +23034,10 @@ header {
     /*margin-top: 80px;*/
 }
 
+main {
+    min-width: 1040px;
+}
+
 /*n-container*/
 .nContainer {
     width: 100%;
@@ -23075,6 +23079,14 @@ header {
     transform: translateY(-50%);
     z-index: 10;
     left: 0;
+}
+
+.areaRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    left: 50%;
 }
 
 .textArea h1 {
@@ -23152,6 +23164,15 @@ header {
     animation-iteration-count: infinite;
 }
 
+.scrollTop {
+    position: fixed; right: 33px; bottom: 42px; background: #fff; width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    z-index: 10000;
+    cursor: pointer;
+    box-shadow: 0 5px 7px 2px rgba(0,0,0,.1);
+}
+
 @keyframes mouseScroll {
     0% {
         opacity: 0;
@@ -23198,6 +23219,144 @@ header {
     color:#fff;
 }
 /* solutionDev 끝 */
+
+/* footer */
+footer {
+    display: block;
+    /*color: #798baf;*/
+}
+
+#introFooter .footerWrap {
+    width: 100%;
+    background-color: #f5fcfa;
+    border-top: 1px solid #e5edef;
+}
+
+#introFooter .footerInner {
+    width: 92%;
+    margin: 0 auto;
+}
+#introFooter .footerTop {
+    padding: 24px 0 22px;
+    display: flex;
+    border-bottom: 1px solid #e9f0f4;
+    list-style: none;
+}
+#introFooter .footerTop li {
+    padding: 0 50px;
+    position: relative;
+}
+
+#introFooter .footerTop li:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #e0e6ee;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#introFooter .footerTop li:first-child {
+    padding-left: 0;
+}
+
+#introFooter .footerTop li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #646a7c;
+    display: inline-block;
+}
+
+.footerBot {
+    display: flex;
+    justify-content: space-between;
+    padding: 29px 0 32px;
+}
+
+.footerBot .left .blucean {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a2028;
+}
+
+.footerBot .left ul {
+    margin-top: 20px;
+    display: flex;
+    width: 720px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.footerBot .left ul li {
+    width: 350px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footerBot .left .tit {
+    color: #798baf;
+}
+
+.footerBot .left .tit:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #d2d9e8;
+    margin: 0 10px;
+}
+
+.footerBot .left .txt {
+    color: #6d7793;
+}
+
+.footerBot .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footerBot .right ul {
+    display: flex;
+    list-style: none;
+}
+
+.footerBot .right ul li {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footerBot .right ul li:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #e0e6ee;
+    margin: 0 10px;
+}
+
+.footerBot .right ul li a {
+    color: #798baf;
+    text-decoration: underline;
+}
+
+.footerLogo {
+    width: 141px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.footerBot .copy {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d7793;
+}
+
+/* footer끝 */
 
 @font-face {
     font-family: 'Pretendard';
@@ -23303,11 +23462,18 @@ header {
         padding-left: 140px;
         margin: 0;
     }
+    #introFooter .footerInner {
+        width: 92%;
+    }
 
 }
 
 @media (max-width: 1280px) {
     body {
+        min-width: 1000px;
+    }
+
+    main {
         min-width: 1000px;
     }
     .n-container {
@@ -23321,13 +23487,19 @@ header {
     }
 
     .mainSection2 {
-        height: 760px;
+        /*height: 760px;*/
     }
 
-    .mainSection3 {
-        width: 720px;
-        left: 37%;
+    .mainSection1, .mainSection3, .mainSection4, .mainSection5 {
+        /*width: 720px;*/
+        /*left: 37%;*/
+        padding: 0 10%;
     }
+
+    .mainSection6 {
+
+    }
+
 }
 
 @media screen and (max-width: 768px)  {
