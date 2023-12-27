@@ -1,32 +1,28 @@
-<!-- 다른 HTML 파일 -->
+<!--
+파일이름 : main.html
+작 성 자 : 윤정문
+작 성 일 : 2023.11.30
+설 명 : 더블루션 플랫폼 메인 페이지
+-->
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
 <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
 <script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-</head>
-<style>
-    /*:root{*/
-    /*    background-image: url('/img/background.jpg'); !* 이미지 경로를 정확히 지정해주세요. *!*/
-    /*    background-size: cover; !* 이미지를 화면에 맞게 조절합니다. *!*/
-    /*    background-repeat: no-repeat; !* 이미지 반복을 방지합니다. *!*/
-    /*}*/
-</style>
-<body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+
+<body>
+    <!-- commonHead 연결 : 네비메뉴 -->
     <div th:replace="fragments/commonHead :: header"></div>
     <main>
-        <!-- Main page content-->
         <div id="wrap">
             <div id="mainSection1" class="mainSection mainSection1">
-    <!--            <div class="full"></div>-->
                 <div class="nContainer">
                     <div class="textArea areaLeft">
                         <h2 class="mainTitle" style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">사업 시작을 위한 <br/>최고의 선택</h2>
                         <h1 style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp; font-weight: 800">더블루션</h1>
-                        <p class="mt-5" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0.3s; animation-name: fadeInUp;">API솔루션, SI, SM 등 <br/>다양한 서비스를 활용해 보세요!</p>
+                        <p class="mt-5" style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">API솔루션, SI, SM 등 <br/>다양한 서비스를 활용해 보세요!</p>
                     </div>
                     <div class="imgArea">
                         <div class="imgBox">
@@ -34,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 스크롤 다운 모션 -->
                 <div class="scrollDowns">
                     <div class="mouse">
                         <div class="scroller"></div>
@@ -42,10 +38,10 @@
                 </div>
             </div>
 
-            <div class="mainSection mainSection2" style="background-color: #1790f9;; padding: 152px 0 0;">
+            <div id="mainSection2" class="mainSection mainSection2" style="background-color: #1790f9;; padding: 152px 0 0;">
                 <div class="nContainer">
                     <div class="textArea" style="text-align: center;">
-                        <h2 style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp; color: #fff; font-size: 48px; font-weight: 700">사업 시작부터 성공까지<br>더블루션과 함께하세요</h2>
+                        <h2 class="animated-0" style="color: #fff; font-size: 48px; font-weight: 700">사업 시작부터 성공까지<br>더블루션과 함께하세요</h2>
                     </div>
                 </div>
             </div>
@@ -53,11 +49,11 @@
             <div id="mainSection3" class="mainSection mainSection3" style="background-color: #fff">
                 <div class="nContainer h-100">
                     <div class="textArea areaLeft">
-                        <div class="titleBadge" style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">결제 A to Z</div>
-                        <h2 class="f-48" style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
+                        <div class="titleBadge animated-0">결제 A to Z</div>
+                        <h2 class="f-48 animated-0">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
                     </div>
-                    <div class="imgArea">
-                        <img src="/img/test1.png" style="width: 50%; left: 55%; position: absolute; top: 220px;">
+                    <div class="imgArea" style="animation-delay: 0.3s;">
+                        <img class="animated-0" src="/img/test1.png" style="width: 50%; left: 55%; position: absolute; top: 220px;">
                     </div>
                 </div>
             </div>
@@ -65,11 +61,11 @@
             <div class="mainSection mainSection4" style="background-color: #fff">
                 <div class="nContainer h-100">
                     <div class="textArea areaRight">
-                        <div class="titleBadge">결제 A to Z</div>
-                        <h2 class="f-48">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
+                        <div class="titleBadge animated-0">결제 A to Z</div>
+                        <h2 class="f-48 animated-0">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
                     </div>
-                    <div class="imgArea">
-                        <img src="/img/test1.png" style="width: 50%; position: absolute; top: 220px;">
+                    <div class="imgArea animated-0">
+                        <img class="animated-0" src="/img/test1.png" style="width: 50%; position: absolute; top: 220px; animation-delay: 0.3s;">
                     </div>
                 </div>
             </div>
@@ -77,33 +73,34 @@
             <div class="mainSection mainSection5" style="background-color: #fff">
                 <div class="nContainer h-100">
                     <div class="textArea areaLeft">
-                        <div class="titleBadge">결제 A to Z</div>
-                        <h2 class="f-48">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
+                        <div class="titleBadge animated-0">결제 A to Z</div>
+                        <h2 class="f-48 animated-0">사업 시작을 위해 준비된<br>모든 결제 서비스</h2>
                     </div>
-                    <div class="imgArea">
-                        <img src="/img/test1.png" style="width: 50%; left: 55%; position: absolute; top: 220px;">
+                    <div class="imgArea animatedDelay-0">
+                        <img class="animated-0" src="/img/test1.png" style="width: 50%; left: 55%; position: absolute; top: 220px;">
                     </div>
                 </div>
             </div>
 
-            <div id="mainSection6" class="mainSection6" style="background-color: #fff; padding: 100px 4% 100px;">
-                <div class="">
-                    <div class="helpWrap" style="top: 10%; width: 100%; padding: 90px 99px;background-color: #111c33;border-radius: 48px;position: relative;">
+            <!--문의하기-->
+            <div id="mainSection6" class="mainSection6">
+                <div class="animated-0">
+                    <div class="helpWrap">
                         <div class="helpTitWrap">
                             <span class="helpLogo"><img src="/img/logo.svg" style="width: 140px; display: block;"></span>
-                            <span class="tit" style="font-size: 38px;line-height: 50px;font-weight: 700;color: #fff;padding-top: 31px; display: block">서비스 이용에 <br/> 도움이 필요하신가요?</span>
-                            <span class="txt" style="font-size: 14px; color: rgba(239,241,247,.8); padding-top: 15px; display: block">카카오톡 문의를 이용하시면 더 많은 정보를 제공해 드립니다.</span>
+                            <span class="tit">서비스 이용에 <br/> 도움이 필요하신가요?</span>
+                            <span class="txt">카카오톡 문의를 이용하시면 더 많은 정보를 제공해 드립니다.</span>
                         </div>
-                        <div class="kakaoBot" style="margin-top: 50px; display: flex; align-items: center; justify-content: space-between;">
-                            <a href="http://pf.kakao.com/_GuAGG/chat"><button class="btn" style="width: 153px; height: 51px; background-size: cover; background-color: #2196f3; color: #fff;">서비스 문의하기</button></a>
-                            <ul style="display: flex; margin-top: 2px; list-style: none">
-                                <li style="margin-right: 100px; color: #fff;">
-                                    <span class="tit" style="font-size: 16px; font-weight: 800; display: block">E-mail</span>
-                                    <span class="txt" style="font-size: 14px; padding-top: 11px; display: block">blucean@gmail.com</span>
+                        <div class="kakaoBot animated-0">
+                            <button class="btn" onclick="openChat()">서비스 문의하기</button>
+                            <ul>
+                                <li>
+                                    <span class="tit">E-mail</span>
+                                    <span class="txt">blucean@gmail.com</span>
                                 </li>
                                 <li style="color: #fff;">
-                                    <span class="tit" style="font-size: 16px; font-weight: 800; display: block">Address</span>
-                                    <span class="txt" style="font-size: 14px; padding-top: 11px; display: block">서울시 영등포구 5가 18</span>
+                                    <span class="tit">Address</span>
+                                    <span class="txt">서울시 영등포구 5가 18</span>
                                 </li>
                             </ul>
                         </div>
@@ -113,32 +110,42 @@
 
             <a href="#mainSection1">
                 <div class="scrollTop">
-                    <img src="/img/arrow-top.png" style="width: 50%; vertical-align: top; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+                    <img src="/img/arrow-top.png">
                 </div>
             </a>
         </div>
     </main>
 </body>
+
 <footer th:fragment="footer">
     <div th:replace="fragments/commonFooter :: footer"></div>
 </footer>
 </html>
 
 <script>
-    $(document).ready(function() {
-        // 스크롤 이벤트를 처리하는 함수
-        $(window).scroll(function() {
-            // mainSection2의 상단 위치를 가져옴
-            var mainSection2Top = $('#mainSection2').offset().top;
+    // 스크롤 내릴 때 타이틀 애니메이션 효과
+    $(document).ready(function () {
+        function scrollAppear() {
+            $('.animated-0').each(function () {
+                let animatedPosition = $(this).offset().top; // 상단에서의 수직 위치
+                let screenPosition = $(window).scrollTop() + $(window).height(); // 현재 스크롤 된 위치의 y좌표 (현재 화면 상단으로 부터의 스크롤 된 거리 + 현재 화면의 세로 크기)
 
-            // 현재 스크롤 위치를 가져옴
-            var scrollPosition = $(window).scrollTop();
-
-            // 특정 위치에 도달하면 애니메이션을 적용
-            if (scrollPosition >= mainSection2Top && !$('#mainSection2 h2').hasClass('fadeInUp')) {
-                // mainSection2에 fadeInUp 애니메이션 클래스 추가
-                $('#mainSection2 h2').addClass('fadeInUp');
-            }
-        });
+                // 만약 해당 요소의 상단 위치가 현재 스크롤된 위치의 아래에 있다면
+                if (animatedPosition < screenPosition) {
+                    // 해당 요소에 'animated'클래스 추가
+                    $(this).addClass('animated');
+                }
+            });
+        }
+        // 스크롤 이벤트가 발생할 때 함수 실행
+        $(window).scroll(scrollAppear);
     });
+
+    // 카카오 채널 새창으로 열고 사이즈 조절
+    function openChat() {
+        // 새 창 열기
+        window.open('http://pf.kakao.com/_GuAGG/chat', '_blank', 'width=450, height=570').moveTo(250,150);
+
+    }
+
 </script>
