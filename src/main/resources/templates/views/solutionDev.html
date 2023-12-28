@@ -1,18 +1,19 @@
+<!--
+파일이름 : solutionDev.html
+작 성 자 : JBY
+작 성 일 : 2023.11.30
+설 명 : 더블루션 솔루션 설명 페이지
+-->
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!--  css  -->
 <link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
-<!--<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/ui-pro/dist/css/styles.css}"/>-->
 <!--  jquery  -->
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
 <script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
 
-<!--<script src="https://kit.fontawesome.com/8f2a2932a6.js" crossorigin="anonymous"></script>-->
-<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>-->
-<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>-->
-<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>-->
 <head>
-
     <title>The Blucean</title>
 </head>
 <style>
@@ -21,25 +22,13 @@
         background-color: white;
     }
 
+    /*버튼 요소 가로 나열*/
     #button-container > div {
         /*margin-top: 50px;*/
         display: inline-block; /* 요소들을 가로로 나열 */
-        white-space: normal; /* 요소 내부의 공백 처리 */
-        vertical-align: top; /* 요소 정렬 */
     }
 
-
-    /* 초기에는 아코디언 요소를 숨겨두기 */
-    .accordion-content {
-        flex: 1 1 auto;
-        padding: 1.5rem 2.5rem;
-        display: none;
-    }
-    /* 보여줘야 할 때 클래스로 보이도록 변경 */
-    .show {
-        display: block;
-    }
-
+    /*KBANK 로그 배치위치*/
     .image-container {
         margin-top: 5%;
         margin-bottom: 10%;
@@ -49,16 +38,9 @@
         position: relative;
     }
 
-    /*.image-container {*/
-    /*    position: relative;*/
-    /*}*/
-
-    /*.image-container img:last-child {*/
-    /*    margin-left: 25%;*/
-    /*}*/
-
+    /*KBANK 로그 효과*/
     #logoDefault,
-    #logoBlack {
+    #logoChange {
         opacity: 0; /* 초기에는 투명도를 0으로 설정하여 숨김 */
         position: absolute; /* 위치 조정을 위해 절대 위치 지정 */
         transition: opacity 1.5s ease-in-out; /* 페이드인 지속 시간을 늘림 */
@@ -68,23 +50,17 @@
         opacity: 1; /* 초기에 logoDefault 이미지를 보이도록 설정 */
     }
 
-    #logoBlack {
-        z-index: 1; /* logoBlack을 위로 올려서 보이도록 설정 */
-    }
-
-    /*.card {*/
-    /*    cursor: pointer;*/
-    /*}*/
 </style>
 <body>
-<!--        <div id="layoutSidenav">-->
+<!--Thymeleaf 템플릿 엔진 header 부분을 대체(replace)-->
 <div th:replace="fragments/commonHead :: header"></div>
 <main>
-    <div id="wrap" class="wrap" style="padding: 180px 0 60px;">
+    <!-- 솔루션 타이틀 및 버튼 -->
+    <div class="wrap" id="wrap" style="padding: 180px 0 60px;">
         <div class="nContainer">
             <div class="textArea" style="text-align: center;">
                 <h2 class="f-48" style="font-weight: 800">더블루션 API 솔루션</h2>
-                <p>통합 시뮬레이터 및 테스트 포털 구축 API입니다.</p>
+                <p>통합 시뮬레이터 및 테스트 포털 구축 API입니다.<br>&nbsp</p>
             </div>
             <div class="buttonArea row" style="text-align: center">
                 <div style="margin-top: 3%;">
@@ -173,76 +149,75 @@
             <div class="card-body accordion-body" style="display: none;">
                 <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
                 <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-
             </div>
         </div>
     </div>
 
-    <!-- faq 스크롤 버젼 -->
-<!--    <div class="nContainer" style="margin-top: 5%;">-->
-<!--        <div class="d-flex align-items-center justify-content-between">-->
-<!--            <div class="me-3">-->
-<!--                &lt;!&ndash; todo.어울리는 이미지로 대체예정 &ndash;&gt;-->
-<!--                &lt;!&ndash;                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>&ndash;&gt;-->
-<!--                <div class="text-center">-->
-<!--                    &lt;!&ndash;                                                            <img src="/img/Biz/icons8-q&a-64.png">&ndash;&gt;-->
-<!--                </div>-->
-<!--                <h1 class="text-center" style="color: black">-->
-<!--                    API SOLUTION FAQ-->
-<!--                </h1>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!-- [TODO]FAQ 스크롤 버전 히스토리 -->
+    <!--    <div class="nContainer" style="margin-top: 5%;">-->
+    <!--        <div class="d-flex align-items-center justify-content-between">-->
+    <!--            <div class="me-3">-->
+    <!--                &lt;!&ndash; todo.어울리는 이미지로 대체예정 &ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>&ndash;&gt;-->
+    <!--                <div class="text-center">-->
+    <!--                    &lt;!&ndash;                                                            <img src="/img/Biz/icons8-q&a-64.png">&ndash;&gt;-->
+    <!--                </div>-->
+    <!--                <h1 class="text-center" style="color: black">-->
+    <!--                    API SOLUTION FAQ-->
+    <!--                </h1>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-<!--    <div class="nContainer">-->
-<!--        <div class="card mb-4">-->
-<!--            <div class="card-header d-flex align-items-center">-->
-<!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-<!--                    <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>-->
-<!--                    <div style="display: flex; align-items: center;">-->
-<!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-body" id="accordionBody" style="display: none;">-->
-<!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-<!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-<!--            </div>-->
-<!--        </div>-->
+    <!--    <div class="nContainer">-->
+    <!--        <div class="card mb-4">-->
+    <!--            <div class="card-header d-flex align-items-center">-->
+    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
+    <!--                    <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>-->
+    <!--                    <div style="display: flex; align-items: center;">-->
+    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="card-body" id="accordionBody" style="display: none;">-->
+    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-<!--        <div class="card mb-4">-->
-<!--            <div class="card-header d-flex align-items-center">-->
-<!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-<!--                    <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>-->
-<!--                    <div style="display: flex; align-items: center;">-->
-<!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="accordion-content" id="accordionBody2" style="display: none;">-->
-<!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-<!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-<!--            </div>-->
-<!--        </div>-->
+    <!--        <div class="card mb-4">-->
+    <!--            <div class="card-header d-flex align-items-center">-->
+    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
+    <!--                    <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>-->
+    <!--                    <div style="display: flex; align-items: center;">-->
+    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="accordion-content" id="accordionBody2" style="display: none;">-->
+    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-<!--        <div class="card mb-4">-->
-<!--            <div class="card-header d-flex align-items-center">-->
-<!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-<!--                    <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>-->
-<!--                    <div style="display: flex; align-items: center;">-->
-<!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="accordion-content" id="accordionBody3" style="display: none;">-->
-<!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-<!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--        <div class="card mb-4">-->
+    <!--            <div class="card-header d-flex align-items-center">-->
+    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
+    <!--                    <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>-->
+    <!--                    <div style="display: flex; align-items: center;">-->
+    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="accordion-content" id="accordionBody3" style="display: none;">-->
+    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
+    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <!-- faq part 끝 -->
-    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
+    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%; margin-bottom: 7%;">
         <div class="d-flex align-items-center justify-content-center flex-column">
             <div class="titleBadge m-1">
                 시작부터 성공까지
@@ -253,19 +228,21 @@
         </div>
     </div>
     <div class="image-container">
-<!--        <img id="logoDefault" src="/img/Biz/kbank.png" alt="logo">-->
-<!--        <img id="logoBlack" src="/img/Biz/kbankBlack.png" alt="logo">-->
+        <!--        <img id="logoDefault" src="/img/Biz/kbank.png" alt="logo">-->
+        <!--        <img id="logoChange" src="/img/Biz/kbankBlack.png" alt="logo">-->
         <img id="logoDefault" src="/img/Biz/1200x630wa.png" alt="logo">
-        <img id="logoBlack" src="/img/Biz/1648896908044.jpg" alt="logo">
+        <img id="logoChange" src="/img/Biz/1648896908044.jpg" alt="logo">
     </div>
-
     <a href="#wrap">
         <div class="scrollTop">
             <img src="/img/arrow-top.png" style="width: 50%; vertical-align: top; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
         </div>
     </a>
+    <!--    <div class="image-container" style="margin-bottom: 10%;">-->
+    <!--        <img class="img" src="/img/Biz/1648896908044.jpg" alt="logo">-->
+    <!--    </div>-->
 </main>
-<footer th:fragment="footer">
+<footer th:fragment="footer" style="margin-top: 100px;">
     <div th:replace="fragments/commonFooter :: footer"></div>
 </footer>
 </body>
@@ -273,21 +250,45 @@
 <script>
     // 아코디언을 영역에 따른 열기 위한 함수
     function openAccordion(event) {
-        // 해당 이벤트의 타겟 요소 (본문) 가져오기
+        //이벤트가 발생한 요소의 부모 중 클래스가 "card"인 요소를 찾고, 그 안에서 클래스가 "accordion-body"인 요소를 찾아 body 변수에 할당
         let body = event.target.closest(".card").querySelector(".accordion-body");
 
-        // 모든 아코디언 본문을 닫기
+        // 다른 아코디언 본문 닫기
         let allAccordionBodies = document.querySelectorAll(".accordion-body");
         allAccordionBodies.forEach(function(accBody) {
             accBody.style.display = "none";
         });
 
-        // 선택한 아코디언 본문만 열기
+        // 선택한 아코디언만 열기
         body.style.display = "block";
+
+        // 아코디언 애니메이션을 위한 높이 조절
+        let maxHeight = 200; // 아코디언이 열린 상태에서의 최대 높이
+        let currentHeight = 0; // 현재 높이 초기화
+        let increment = 5; // 변경되는 높이의 증가량
+        let duration = 300; // 애니메이션 지속 시간
+
+        function expandAccordion() {
+            currentHeight += increment; // 높이를 증가시킴
+            body.style.maxHeight = currentHeight + "px"; // 아코디언의 높이를 조절함
+
+            // 현재 높이가 최대 높이 미만인 경우 애니메이션을 계속 진행
+            if (currentHeight < maxHeight) {
+                // 지정된 시간 후에 다시 expandAccordion 함수를 호출하여 부드러운 애니메이션을 만듦
+                setTimeout(expandAccordion, duration / (maxHeight / increment));
+            } else {
+                body.style.maxHeight = maxHeight + "px"; // 최대 높이로 설정하여 마지막 상태를 고정함
+            }
+        }
+
+        // 아코디언이 열려있지 않을 때만 함수를 호출하여 애니메이션을 시작함
+        if (currentHeight < maxHeight) {
+            expandAccordion();
+        }
     }
 
-    // HTML 문서 로드 후 실행되는 함수
-    document.addEventListener("DOMContentLoaded", function() {
+    // 아코디언 영역에 따른 open, close
+    document.addEventListener("DOMContentLoaded", function() { // HTML 문서가 완전히 로드되고 파싱된 후에 발생하는 이벤트
         // 모든 아코디언 카드(질문 부분)에 대해 이벤트를 추가합니다.
         let accordionCards = document.querySelectorAll(".card-header");
 
@@ -299,7 +300,7 @@
 
             // 각각의 아코디언 카드에 마우스 이탈 이벤트를 추가합니다.
             card.addEventListener("mouseleave", function(event) {
-                var body = event.target.closest(".card").querySelector(".accordion-body");
+                let body = event.target.closest(".card").querySelector(".accordion-body");
                 body.style.display = "none";
             });
         });
@@ -307,21 +308,22 @@
 
     //로고 show hide
     const logoDefault = document.getElementById('logoDefault');
-    const logoBlack = document.getElementById('logoBlack');
+    const logoChange = document.getElementById('logoChange');
 
     let showLogoDefault = true;
 
-    setInterval(function () {
+    setInterval(function () { // 타이머 함수
         if (showLogoDefault) {
             logoDefault.style.opacity = '1'; // 페이드인되도록 투명도를 1로 변경
-            logoBlack.style.opacity = '0'; // 다른 이미지는 투명도를 0으로 설정하여 숨김
+            logoChange.style.opacity = '0'; // 다른 이미지는 투명도를 0으로 설정하여 숨김
         } else {
             logoDefault.style.opacity = '0';
-            logoBlack.style.opacity = '1';
+            logoChange.style.opacity = '1';
         }
         showLogoDefault = !showLogoDefault; // 이미지를 반대로 전환
     }, 2000); // 3초마다 이미지 전환
 
+    // [TODO]FAQ 스크롤 버전 function 히스토리
     // FAQ 아코디언 스크롤 이벤트 리스너 추가
     // window.addEventListener('scroll', function() {
     //     const currentScroll = window.scrollY || window.pageYOffset;
@@ -355,16 +357,7 @@
     //     element.style.display = 'block'; // 특정 아코디언 요소만 보이도록 변경
     // }
 
-    // 화면 줄였을때 메뉴바
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     const toggleButton = document.querySelector('.navbar__toogleBtn');
-    //     const menu = document.querySelector('.navbar__menu');
-    //
-    //     toggleButton.addEventListener('click', function() {
-    //         menu.classList.toggle('active');
-    //     });
-    // });
-
+    // [TODO]FAQ 클릭 버전 function 히스토리
     // FAQ 아코디언 클릭하는 버전
     // function toggleAccordion(clickedElement) {
     //     const accordionBody = clickedElement.nextElementSibling;
