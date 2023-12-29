@@ -39,7 +39,7 @@
     }
 
     /*KBANK 로그 효과*/
-    #logoDefault,
+    /*#logoDefault,*/
     #logoChange {
         opacity: 0; /* 초기에는 투명도를 0으로 설정하여 숨김 */
         position: absolute; /* 위치 조정을 위해 절대 위치 지정 */
@@ -251,7 +251,7 @@
     // 아코디언을 영역에 따른 열기 위한 함수
     function openAccordion(event) {
         //이벤트가 발생한 요소의 부모 중 클래스가 "card"인 요소를 찾고, 그 안에서 클래스가 "accordion-body"인 요소를 찾아 body 변수에 할당
-        let body = event.target.closest(".card").querySelector(".accordion-body");
+        let body = event.target.closest(".card").querySelector(".accordion-body");//답변부분
 
         // 다른 아코디언 본문 닫기
         let allAccordionBodies = document.querySelectorAll(".accordion-body");
@@ -259,32 +259,9 @@
             accBody.style.display = "none";
         });
 
-        // 선택한 아코디언만 열기
+        // 마우스가 영역에 들어온 아코디언만 열기
         body.style.display = "block";
 
-        // 아코디언 애니메이션을 위한 높이 조절
-        let maxHeight = 200; // 아코디언이 열린 상태에서의 최대 높이
-        let currentHeight = 0; // 현재 높이 초기화
-        let increment = 5; // 변경되는 높이의 증가량
-        let duration = 300; // 애니메이션 지속 시간
-
-        function expandAccordion() {
-            currentHeight += increment; // 높이를 증가시킴
-            body.style.maxHeight = currentHeight + "px"; // 아코디언의 높이를 조절함
-
-            // 현재 높이가 최대 높이 미만인 경우 애니메이션을 계속 진행
-            if (currentHeight < maxHeight) {
-                // 지정된 시간 후에 다시 expandAccordion 함수를 호출하여 부드러운 애니메이션을 만듦
-                setTimeout(expandAccordion, duration / (maxHeight / increment));
-            } else {
-                body.style.maxHeight = maxHeight + "px"; // 최대 높이로 설정하여 마지막 상태를 고정함
-            }
-        }
-
-        // 아코디언이 열려있지 않을 때만 함수를 호출하여 애니메이션을 시작함
-        if (currentHeight < maxHeight) {
-            expandAccordion();
-        }
     }
 
     // 아코디언 영역에 따른 open, close
@@ -320,11 +297,11 @@
             logoDefault.style.opacity = '0';
             logoChange.style.opacity = '1';
         }
-        showLogoDefault = !showLogoDefault; // 이미지를 반대로 전환
+        showLogoDefault = !showLogoDefault; // 이미지를 무조건 반대값 입력
     }, 2000); // 3초마다 이미지 전환
 
     // [TODO]FAQ 스크롤 버전 function 히스토리
-    // FAQ 아코디언 스크롤 이벤트 리스너 추가
+    // FAQ **아코디언 스크롤** 이벤트 리스너 추가
     // window.addEventListener('scroll', function() {
     //     const currentScroll = window.scrollY || window.pageYOffset;
     //     const scrollPercentage = currentScroll / (document.documentElement.scrollHeight - window.innerHeight);
@@ -358,7 +335,7 @@
     // }
 
     // [TODO]FAQ 클릭 버전 function 히스토리
-    // FAQ 아코디언 클릭하는 버전
+    // FAQ **아코디언 클릭**하는 버전
     // function toggleAccordion(clickedElement) {
     //     const accordionBody = clickedElement.nextElementSibling;
     //     const icon = clickedElement.querySelector('span');
