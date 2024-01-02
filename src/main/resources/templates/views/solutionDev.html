@@ -5,14 +5,10 @@
 설 명 : 더블루션 솔루션 설명 페이지
 -->
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<!--  css  -->
-<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
-<!--  jquery  -->
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/defaultLayout}" layout:fragment="content">
 <head>
     <title>The Blucean</title>
 </head>
@@ -53,7 +49,7 @@
 </style>
 <body>
 <!--Thymeleaf 템플릿 엔진 header 부분을 대체(replace)-->
-<div th:replace="fragments/commonHead :: header"></div>
+<!--<div th:replace="fragments/commonHead :: header"></div>-->
 <main>
     <!-- 솔루션 타이틀 및 버튼 -->
     <div class="wrap" id="wrap" style="padding: 180px 0 60px;">
@@ -106,11 +102,11 @@
     </div>
     <div class="nContainer">
         <div class="card mb-4">
-            <div class="card-header d-flex align-items-center">
+            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">
                 <div class="w-100 d-flex justify-content-between align-items-center">
                     <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>
                     <div style="display: flex; align-items: center;">
-                        <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        <span style="vertical-align: middle;">▼</span>
                     </div>
                 </div>
             </div>
@@ -122,11 +118,11 @@
     </div>
     <div class="nContainer">
         <div class="card mb-4">
-            <div class="card-header d-flex align-items-center">
+            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">
                 <div class="w-100 d-flex justify-content-between align-items-center">
                     <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>
                     <div style="display: flex; align-items: center;">
-                        <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        <span style="vertical-align: middle;">▼</span>
                     </div>
                 </div>
             </div>
@@ -138,11 +134,11 @@
     </div>
     <div class="nContainer">
         <div class="card mb-4">
-            <div class="card-header d-flex align-items-center">
+            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)">
                 <div class="w-100 d-flex justify-content-between align-items-center">
                     <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>
                     <div style="display: flex; align-items: center;">
-                        <!--                            <span style="vertical-align: middle;">▼</span>-->
+                        <span style="vertical-align: middle;">▼</span>
                     </div>
                 </div>
             </div>
@@ -152,70 +148,6 @@
             </div>
         </div>
     </div>
-
-    <!-- [TODO]FAQ 스크롤 버전 히스토리 -->
-    <!--    <div class="nContainer" style="margin-top: 5%;">-->
-    <!--        <div class="d-flex align-items-center justify-content-between">-->
-    <!--            <div class="me-3">-->
-    <!--                &lt;!&ndash; todo.어울리는 이미지로 대체예정 &ndash;&gt;-->
-    <!--                &lt;!&ndash;                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package feather-xl text-primary mb-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>&ndash;&gt;-->
-    <!--                <div class="text-center">-->
-    <!--                    &lt;!&ndash;                                                            <img src="/img/Biz/icons8-q&a-64.png">&ndash;&gt;-->
-    <!--                </div>-->
-    <!--                <h1 class="text-center" style="color: black">-->
-    <!--                    API SOLUTION FAQ-->
-    <!--                </h1>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-
-    <!--    <div class="nContainer">-->
-    <!--        <div class="card mb-4">-->
-    <!--            <div class="card-header d-flex align-items-center">-->
-    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-    <!--                    <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>-->
-    <!--                    <div style="display: flex; align-items: center;">-->
-    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="card-body" id="accordionBody" style="display: none;">-->
-    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-    <!--            </div>-->
-    <!--        </div>-->
-
-    <!--        <div class="card mb-4">-->
-    <!--            <div class="card-header d-flex align-items-center">-->
-    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-    <!--                    <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>-->
-    <!--                    <div style="display: flex; align-items: center;">-->
-    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="accordion-content" id="accordionBody2" style="display: none;">-->
-    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-    <!--            </div>-->
-    <!--        </div>-->
-
-    <!--        <div class="card mb-4">-->
-    <!--            <div class="card-header d-flex align-items-center">-->
-    <!--                <div class="w-100 d-flex justify-content-between align-items-center">-->
-    <!--                    <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>-->
-    <!--                    <div style="display: flex; align-items: center;">-->
-    <!--                        &lt;!&ndash;                            <span style="vertical-align: middle;">▼</span>&ndash;&gt;-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="accordion-content" id="accordionBody3" style="display: none;">-->
-    <!--                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>-->
-    <!--                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-
     <!-- faq part 끝 -->
     <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%; margin-bottom: 7%;">
         <div class="d-flex align-items-center justify-content-center flex-column">
@@ -228,8 +160,6 @@
         </div>
     </div>
     <div class="image-container">
-        <!--        <img id="logoDefault" src="/img/Biz/kbank.png" alt="logo">-->
-        <!--        <img id="logoChange" src="/img/Biz/kbankBlack.png" alt="logo">-->
         <img id="logoDefault" src="/img/Biz/1200x630wa.png" alt="logo">
         <img id="logoChange" src="/img/Biz/1648896908044.jpg" alt="logo">
     </div>
@@ -238,51 +168,10 @@
             <img src="/img/arrow-top.png" style="width: 50%; vertical-align: top; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
         </div>
     </a>
-    <!--    <div class="image-container" style="margin-bottom: 10%;">-->
-    <!--        <img class="img" src="/img/Biz/1648896908044.jpg" alt="logo">-->
-    <!--    </div>-->
 </main>
-<footer th:fragment="footer" style="margin-top: 100px;">
-    <div th:replace="fragments/commonFooter :: footer"></div>
-</footer>
 </body>
 </html>
 <script>
-    // 아코디언을 영역에 따른 열기 위한 함수
-    function openAccordion(event) {
-        //이벤트가 발생한 요소의 부모 중 클래스가 "card"인 요소를 찾고, 그 안에서 클래스가 "accordion-body"인 요소를 찾아 body 변수에 할당
-        let body = event.target.closest(".card").querySelector(".accordion-body");//답변부분
-
-        // 다른 아코디언 본문 닫기
-        let allAccordionBodies = document.querySelectorAll(".accordion-body");
-        allAccordionBodies.forEach(function(accBody) {
-            accBody.style.display = "none";
-        });
-
-        // 마우스가 영역에 들어온 아코디언만 열기
-        body.style.display = "block";
-
-    }
-
-    // 아코디언 영역에 따른 open, close
-    document.addEventListener("DOMContentLoaded", function() { // HTML 문서가 완전히 로드되고 파싱된 후에 발생하는 이벤트
-        // 모든 아코디언 카드(질문 부분)에 대해 이벤트를 추가합니다.
-        let accordionCards = document.querySelectorAll(".card-header");
-
-        accordionCards.forEach(function(card) {
-            // 각각의 아코디언 카드에 마우스 진입 이벤트를 추가합니다.
-            card.addEventListener("mouseenter", function(event) {
-                openAccordion(event);
-            });
-
-            // 각각의 아코디언 카드에 마우스 이탈 이벤트를 추가합니다.
-            card.addEventListener("mouseleave", function(event) {
-                let body = event.target.closest(".card").querySelector(".accordion-body");
-                body.style.display = "none";
-            });
-        });
-    });
-
     //로고 show hide
     const logoDefault = document.getElementById('logoDefault');
     const logoChange = document.getElementById('logoChange');
@@ -300,55 +189,21 @@
         showLogoDefault = !showLogoDefault; // 이미지를 무조건 반대값 입력
     }, 2000); // 3초마다 이미지 전환
 
-    // [TODO]FAQ 스크롤 버전 function 히스토리
-    // FAQ **아코디언 스크롤** 이벤트 리스너 추가
-    // window.addEventListener('scroll', function() {
-    //     const currentScroll = window.scrollY || window.pageYOffset;
-    //     const scrollPercentage = currentScroll / (document.documentElement.scrollHeight - window.innerHeight);
-    //
-    //     // const showThreshold = 0.1; // 보여줄 위치의 임계값
-    //
-    //     // 첫 번째 요소
-    //     const accordionBody = document.getElementById('accordionBody');
-    //     if (scrollPercentage >= 0.6 && scrollPercentage < 0.7) {
-    //         toggleAccordion(accordionBody);
-    //     }
-    //
-    //     // 두 번째 요소
-    //     const accordionBody2 = document.getElementById('accordionBody2');
-    //     if (scrollPercentage >= 0.7 && scrollPercentage < 0.8) {
-    //         toggleAccordion(accordionBody2);
-    //     }
-    //
-    //     // 세 번째 요소
-    //     const accordionBody3 = document.getElementById('accordionBody3');
-    //     if (scrollPercentage >= 0.8 && scrollPercentage < 1.0) {
-    //         toggleAccordion(accordionBody3);
-    //     }
-    // });
 
-    // function toggleAccordion(element) {
-    //     const accordions = document.querySelectorAll('.accordion-content');
-    //     accordions.forEach(acc => acc.style.display = 'none'); // 모든 아코디언 요소를 숨김
-    //
-    //     element.style.display = 'block'; // 특정 아코디언 요소만 보이도록 변경
-    // }
-
-    // [TODO]FAQ 클릭 버전 function 히스토리
     // FAQ **아코디언 클릭**하는 버전
-    // function toggleAccordion(clickedElement) {
-    //     const accordionBody = clickedElement.nextElementSibling;
-    //     const icon = clickedElement.querySelector('span');
-    //     const isClosing = accordionBody.style.display === 'block';
-    //
-    //     // 클릭한 아코디언이 열려있는 경우 닫기
-    //     if (isClosing) {
-    //         accordionBody.style.display = 'none';
-    //         icon.textContent = '▼'; // 닫혔을 때 아이콘 변경
-    //     } else {
-    //         // 클릭한 아코디언만 열기
-    //         accordionBody.style.display = 'block';
-    //         icon.textContent = '◀'; // 열렸을 때 아이콘 변경
-    //     }
-    // }
+    function toggleAccordion(clickedElement) {
+        const accordionBody = clickedElement.nextElementSibling;
+        const icon = clickedElement.querySelector('span');
+        const isClosing = accordionBody.style.display === 'block';
+
+        // 클릭한 아코디언이 열려있는 경우 닫기
+        if (isClosing) {
+            accordionBody.style.display = 'none';
+            icon.textContent = '▼'; // 닫혔을 때 아이콘 변경
+        } else {
+            // 클릭한 아코디언만 열기
+            accordionBody.style.display = 'block';
+            icon.textContent = '◀'; // 열렸을 때 아이콘 변경
+        }
+    }
 </script>
