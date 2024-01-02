@@ -4,3 +4,6 @@ spring:
       enabled: true
   thymeleaf:
     cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html

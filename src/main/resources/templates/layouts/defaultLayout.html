@@ -5,10 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--  CSP(Content Security Policy): 콘텐츠 보안 정책  -->
-    <!--meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"-->
     <!-- css 파일 추가 -->
-    <link rel="icon" href="data:,">
+<!--    <link rel="icon" href="data:,">-->
 <!--    <link rel="icon" type="image/x-icon" href="/admin-pro/dist/assets/img/favicon.png" th:href="@{/admin-pro/dist/assets/img/favicon.png}" />-->
     <link href="/admin-pro/dist/css/tui/tui-grid.min.css" th:href="@{/admin-pro/dist/css/tui/tui-grid.min.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="/admin-pro/dist/css/tui/toastui-chart.min.css" th:href="@{/admin-pro/dist/css/tui/toastui-chart.min.css}"/>
@@ -35,7 +33,9 @@
     <script type="text/javascript" th:src="@{/admin-pro/dist/js/all.min.js}"></script>
     <script type="text/javascript" th:src="@{/admin-pro/dist/js/common.js}"></script>
 </head>
-<body class="nav-fixed">
+<body>
     <th:block th:replace="fragments/commonHead :: header"></th:block>
+    <th:block layout:fragment="content"></th:block>
+    <th:block th:replace="fragments/commonFooter :: footer"></th:block>
 </body>
 </html>

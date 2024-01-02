@@ -5,15 +5,12 @@
 설 명 : 더블루션 플랫폼 메인 페이지
 -->
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
-<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/defaultLayout}" layout:fragment="content">
 <body>
     <!-- commonHead 연결 : 네비메뉴 -->
-    <div th:replace="fragments/commonHead :: header"></div>
     <main>
         <div id="wrap">
             <div id="mainSection1" class="mainSection mainSection1">
@@ -37,7 +34,7 @@
                 </div>
             </div>
 
-            <div id="mainSection2" class="mainSection mainSection2" style="background-color: #1790f9;; padding: 152px 0 0;">
+            <div id="mainSection2" class="mainSection mainSection2" style="background-color: #1790f9; padding: 152px 0 0;">
                 <div class="nContainer">
                     <div class="textArea" style="text-align: center;">
                         <h2 class="animated-0" style="color: #fff; font-size: 48px; font-weight: 700">사업 시작부터 성공까지<br>더블루션과 함께하세요</h2>
