@@ -34,28 +34,8 @@
     <script type="text/javascript" th:src="@{/admin-pro/dist/js/bundle.js}"></script>
     <script type="text/javascript" th:src="@{/admin-pro/dist/js/all.min.js}"></script>
     <script type="text/javascript" th:src="@{/admin-pro/dist/js/common.js}"></script>
-    <!-- csrf 대응 -->
-<!--    <th:block th:if="${_csrf == null}">-->
-<!--        <meta id="_csrf" name="_csrf" content="" />-->
-<!--        <meta id="_csrf_header" name="_csrf_header" content="" />-->
-<!--    </th:block>-->
-<!--    <th:block th:if="${_csrf != null}">-->
-<!--        <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>-->
-<!--        <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>-->
-<!--    </th:block>-->
-<!--    <meta name="test2" content="test2" />-->
 </head>
 <body class="nav-fixed">
-<!--<th:block layout:fragment="modal" th:if="${isModal}"></th:block>-->
-<!--<th:block th:unless="${isModal}">-->
     <th:block th:replace="fragments/commonHead :: header"></th:block>
-<!--    <div id="layoutSidenav">-->
-<!--        <th:block th:replace="fragments/lnb :: lnb"></th:block>-->
-<!--        <div id="layoutSidenav_content">-->
-<!--            <th:block layout:fragment="content"></th:block>-->
-<!--            <th:block th:replace="fragments/commonFooter :: footer"></th:block>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</th:block>-->
 </body>
 </html>
