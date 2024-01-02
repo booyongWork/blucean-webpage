@@ -42,7 +42,7 @@
     <div class="businessSection" style="display: flex;
     justify-content: center">
         <div id="nContainer" class="nContainer">
-            <div id="cardGroup" style="display: flex; flex-wrap: wrap; justify-content: center">
+            <div id="cardGroup" style="display: flex; flex-wrap: wrap;">
                 <div th:each="business : ${businessList}" class="card" style="width: 250px; justify-content:center; margin-right:10px; margin-bottom: 10px;">
                     <div class="card-body" style="margin: 0 auto;">
                         <img th:src="${business.companyLogo}" alt="">
@@ -74,6 +74,7 @@
         let cardContainer = document.getElementById("cardGroup");
         let cards = cardContainer.getElementsByClassName("card");
 
+
         if (cards.length <= 12) {   // 조건 12개 보다 같거나 작을 때
             if (cards.length === 1) {
                 // 카드 1개일 때
@@ -83,8 +84,8 @@
                 for (let i = 0; i < cards.length; i++) {
                     cards[i].style.width = "450px";
                 }
-            } else if (cards.length % 3 === 0) {
-                // 3의 배수일 때
+            } else if (cards.length % 3 === 0 || cards.length % 5 === 0) {
+                // 3, 5의 배수일 때
                 for (let i = 0; i < cards.length; i++) {
                     cards[i].style.width = "300px";
                 }
