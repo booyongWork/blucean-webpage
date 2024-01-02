@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +43,10 @@ public class BluceanController {
         businessList.add(new Business("/img/businessLogo/img_s1_13.png", "단국대학교", "단국대학교 교육지원 시스템 및 서비스 개발"));
         businessList.add(new Business("/img/businessLogo/img_s1_17.png", "kbank", "케이뱅크 API 플랫폼 고도화 개발"));
         businessList.add(new Business("/img/businessLogo/img_s1_18.png", "LS ITC", "LS ITC 전기차 관제플랫폼 개발"));
-        businessList.add(new Business("/img/businessLogo/img_s1_18.png", "TEST", "LS ITC 전기차 관제플랫폼 개발"));
-        businessList.add(new Business("/img/businessLogo/img_s1_18.png", "TEST", "LS ITC 전기차 관제플랫폼 개발"));
+//        businessList.add(new Business("/img/businessLogo/img_s1_18.png", "TEST", "LS ITC 전기차 관제플랫폼 개발"));
+//        businessList.add(new Business("/img/businessLogo/img_s1_18.png", "TEST", "LS ITC 전기차 관제플랫폼 개발"));
 
+        model.addAttribute("businessList", businessList);
         return "views/platformDev";
     }
 
