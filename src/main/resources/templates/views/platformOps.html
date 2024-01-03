@@ -4,12 +4,12 @@
 작 성 일 : 2023.11.30
 설 명 : 더블루션 플랫폼 운영 설명 페이지
 -->
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/defaultLayout}" layout:fragment="content">
+<script type="text/javascript" th:src="@{/admin-pro/dist/js/platformOps.js}"></script>
 <head>
     <title>The Blucean</title>
 </head>
@@ -32,9 +32,13 @@
         height: 320px;
     }
 
-    .card-body {
-        flex: 1 1 auto;
-        padding: 1.5rem 2.5rem;
+    .card img {
+        display: block; /* 이미지를 블록 요소로 변경하여 가운데 정렬 */
+        margin: 0 auto; /* 좌우 마진을 auto로 설정하여 이미지를 가운데 정렬 */
+    }
+
+    #slider {
+        text-align: center; /* 부모 요소인 #slider를 기준으로 가운데 정렬 */
     }
 </style>
 <body>
@@ -56,348 +60,13 @@
         </div>
     </div>
 
-<!-- 버튼 클릭 slide 버전   -->
-    <div class="nContainer" style="margin-bottom: 100px;">
-        <div class="row">
-            <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden;">
-                <!-- 카드 1 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_05.png" alt="logo">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                KT 에어맵 플랫폼 운영1
-                                <br>2018년11월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 2 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_05.png" alt="logo">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                KT 에너지 서비스 플랫폼 운영2
-                                <br>2023년11월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 3 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_11.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                KT API 플랫폼 운영3
-                                <br>2023년10월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 4 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_16.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                빅데이터 시스템 운영4
-                                <br>2023년9월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 5 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_07.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                KT OTT 플랫폼(시즌) 운영5
-                                <br>2022년12월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 6 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발6
-                                <br>2022년11월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 7 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발7
-                                <br>2022년9월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 8 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발8
-                                <br>2022년8월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 9 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발9
-                                <br>2022년7월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 10 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발10
-                                <br>2022년2월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 11 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발11
-                                <br>2022년1월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 카드 12 -->
-                <div class="card">
-                    <div class="card-header bg-transparent" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="pricing-columns-price">
-                            <img src="/img/Biz/img_s1_01.png">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush" style="display: flex; justify-content: center; align-items: center;">
-                            <li class="list-group-item">
-                                신세계 I&C API 플랫폼 개발
-                                <br>2021년12월</br>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="businessSection" style="display: flex; justify-content: center">
+        <div id="nContainer" class="nContainer" style="margin-bottom: 100px;">
+            <div class="row">
+                <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden;"></div>
             </div>
         </div>
-<!--        <div class="buttonArea row" style="text-align: center">-->
-<!--            <div style="margin-top: 3%;">-->
-<!--                <button class="btn bg-light me-2 my-1 btn-sm" onclick="descSort()">최신순</button>-->
-<!--                <button class="btn bg-light me-2 my-1 btn-sm" onclick="asceSort()">과거순</button>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </main>
 </body>
 </html>
-<script type="text/javascript">
-    function countCards() {
-        const cardContainer = document.getElementById('slider');
-        const cards = cardContainer.getElementsByClassName('card');
-        const cardCount = cards.length;
-
-        return cardCount;
-    }
-
-    const numberOfCards = countCards();
-    console.log('총 카드 수 : ', numberOfCards);
-
-
-/*===카드 날짜(최신순 과거순) ============================================================================================================*/
-
-    // 모든 카드 요소를 선택
-    const cardsContainer = document.querySelector('.pricing-columns');
-    const cards = Array.from(cardsContainer.querySelectorAll('.card'));
-
-    // 각 카드 날짜 정보 추출 후 배열에 저장
-    const cardDates = cards.map((card, index) => {
-        const dateElement = card.querySelector('li.list-group-item');
-        const dates = dateElement.innerHTML.split('<br>');
-        const dateInfo = dates[1].trim();
-        console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
-        return { dateInfo, card };
-    });
-
-    // 날짜 기준 내림차순 정렬
-    // cardDates.sort((a, b) => {
-    //     // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-    //     const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-    //     const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
-    //
-    //     return dateB - dateA; // 내림차순 정렬
-    // });
-
-    // 날짜 기준 오름차순 정렬
-    // cardDates.sort((a, b) => {
-    //     // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-    //     const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-    //     const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
-    //
-    //     return dateA - dateB; // 오름차순 정렬
-    // });
-
-    console.log("정렬된 카드 배열" + cardDates);
-
-    // 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가합니다.
-    // cards.forEach(card => card.remove()); // 기존 카드 모두 제거
-    // // 정렬된 순서대로 DOM 요소를 다시 배치합니다.
-    // cardDates.forEach((item) => {
-    //     cardsContainer.appendChild(item.card);
-    // });
-
-/*=== Slick 옵션 =============================================================================================================*/
-
-    $(document).ready(function(){
-        let slidesToShowValue = 4; // 기본 값은 4로 설정
-
-        if (numberOfCards % 4 === 0) {
-            slidesToShowValue = 4;
-        } else if (numberOfCards % 3 === 0) {
-            slidesToShowValue = 3;
-        }
-
-        $('#slider').slick({
-            slidesToShow: slidesToShowValue, // 한 번에 보여질 슬라이드의 수
-            slidesToScroll: slidesToShowValue, // 한 번에 스크롤 될 슬라이드의 수
-            autoplay: true, // 자동 재생 기능을 활성화
-            autoplaySpeed: 2000, // 자동 재생 속도
-            prevArrow: "<button type='button' class='slick-prev'>이전</button>",
-            nextArrow: "<button type='button' class='slick-next'>다음</button>",
-        });
-    });
-
-    // 슬라이드가 완성된 후 보이도록 변경
-    $('#slider').on('init', function() {
-        $(this).css({ visibility: 'visible', opacity: 1 });
-    });
-
-    // 최신순
-    function descSort() {
-        $('#slider').slick('unslick');
-
-        cardDates.sort((a, b) => {
-            // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-            const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-            const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
-
-            return dateB - dateA; // 내림차순 정렬
-        });
-        rearrangeCards();
-    }
-
-    // 과거순
-    function asceSort() {
-        $('#slider').slick('unslick');
-
-        cardDates.sort((a, b) => {
-            // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-            const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-            const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
-
-            return dateA - dateB; // 오름차순 정렬
-        });
-        rearrangeCards();
-    }
-
-    // 카드 재배치 함수
-    function rearrangeCards() {
-        // 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가합니다.
-        cards.forEach(card => card.remove()); // 기존 카드 모두 제거
-
-        // 정렬된 순서대로 DOM 요소를 다시 배치합니다.
-        cardDates.forEach((item) => {
-            cardsContainer.appendChild(item.card);
-        });
-
-        let slidesToShowValue = 4; // 기본 값은 4로 설정
-
-        if (numberOfCards % 4 === 0) {
-            slidesToShowValue = 4;
-        } else if (numberOfCards % 3 === 0) {
-            slidesToShowValue = 3;
-        }
-
-        $('#slider').slick({
-            slidesToShow: slidesToShowValue, // 한 번에 보여질 슬라이드의 수
-            slidesToScroll: slidesToShowValue, // 한 번에 스크롤 될 슬라이드의 수
-            autoplay: true, // 자동 재생 기능을 활성화
-            autoplaySpeed: 2000, // 자동 재생 속도
-            prevArrow: "<button type='button' class='slick-prev'>이전</button>",
-            nextArrow: "<button type='button' class='slick-next'>다음</button>",
-        });
-    }
-</script>
