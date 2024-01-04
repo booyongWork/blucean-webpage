@@ -10,7 +10,7 @@ public class IndexController {
 
     @RequestMapping("/main")
     public String mainPage() {
-       log.debug("############### IndexController mainPage ###############");
+       log.info("############### IndexController mainPage ###############");
 
         return "views/main";
     }
