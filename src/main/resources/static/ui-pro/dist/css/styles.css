@@ -20211,9 +20211,6 @@ section {
   }
 }
 
-/* solutionDev */
-
-
 .scroller {
   width: 2px;
   height: 9px;
@@ -20306,7 +20303,7 @@ section {
   }
 }
 
-/*헤더 로그 사이즈*/
+/*헤더 로고 사이즈*/
 .enlarged-logo {
   width: 150px;
 }

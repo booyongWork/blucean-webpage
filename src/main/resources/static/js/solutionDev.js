@@ -10,9 +10,10 @@ AOS.init({
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
         { image: '/img/Biz/1200x630wa.png' },
-        // { image: '/img/Biz/img_s1_05.png' },
-        // { image: '/img/Biz/1648896908044.jpg' },
-        // { image: '/img/Biz/1200x630wa.png' },
+        { image: '/img/Biz/img_s1_05.png' },
+        { image: '/img/Biz/1648896908044.jpg' },
+        { image: '/img/Biz/1200x630wa.png' },
+        { image: '/img/Biz/1200x630wa.png' },
     ];
 
     // cardsData 배열 순회
@@ -161,20 +162,20 @@ function toggleAccordion(clickedElement) {
     //
     //     // Samsung Galaxy 기준
     //     else if (viewportWidth <= 360 && viewportHeight <= 640) {
-    //         index = 4; // Galaxy S7 해상도에 대한 색상 순서 설정
+    //         index = 4; // Galaxy S7
     //     } else if (viewportWidth <= 360 && viewportHeight <= 740) {
-    //         index = 5; // Galaxy A20 해상도에 대한 색상 순서 설정
+    //         index = 5; // Galaxy A20
     //     } else if (viewportWidth <= 360 && viewportHeight <= 760) {
-    //         index = 6; // Galaxy J6 해상도에 대한 색상 순서 설정
+    //         index = 6; // Galaxy J6
     //     }
     //
     //     // Google Pixel 기준
     //     else if (viewportWidth <= 411 && viewportHeight <= 731) {
-    //         index = 7; // Pixel 2 해상도에 대한 색상 순서 설정
+    //         index = 7; // Pixel 2
     //     } else if (viewportWidth <= 411 && viewportHeight <= 823) {
-    //         index = 8; // Pixel 2 XL 해상도에 대한 색상 순서 설정
+    //         index = 8; // Pixel 2
     //     }
-    //     // ... 다른 기기에 대한 설정도 유사하게 추가
+    //
     //
     //     title.style.color = colors[index];
     // }

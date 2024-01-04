@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return 0; // 같은 경우 순서 변경하지 않음
     });
 
-    // 날짜 기준 오름차순 정렬
+    // 오름차순 정렬
     // cardDates.sort((a, b) => {
     //     const dateA = new Date(a.dateInfo);
     //     const dateB = new Date(b.dateInfo);
