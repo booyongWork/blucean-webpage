@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Mobile App - SB UI Kit Pro</title>
+    <title>더블루션</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -26,7 +26,7 @@
 <div id="layoutDefault">
     <div id="layoutDefault_content">
         <main>
-            <header class="page-header-ui page-header-ui-light" style="background-color: #0eef0;">
+            <header class="page-header-ui page-header-ui-light">
                 <div class="page-header-ui-content pt-5">
                     <div class="container px-5">
                         <div class="row gx-5 align-items-center">
@@ -63,7 +63,7 @@
             </section>
             <hr class="my-0" />
 
-            <section class="bg-light py-10">
+            <section id="section3" class="bg-light py-10">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-md-9 col-lg-6 order-1 order-lg-0" data-aos="fade-right">
@@ -115,7 +115,7 @@
             </section>
 
 
-            <section class="bg-white py-10 px-5">
+            <section id="section6" class="bg-white py-10 px-5">
                 <div class="card bg-light shadow-none">
                     <div class="card-body text-center p-5">
                         <h2>서비스 이용에 도움이 필요하신가요?</h2>
@@ -170,10 +170,10 @@
         // 새 창 열기
 
         let width = 450;
-        let height = 570;
+        let height = 590;
 
-        let left = (screen.width - width) / 2;
-        let top = (screen.height - height) / 2;
+        let left = (screen.width - width) / 2 + window.screenX;
+        let top = (screen.height - height) / 2 + window.screenY;
 
         window.open('http://pf.kakao.com/_GuAGG/chat', '_blank', 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top).focus();
 
