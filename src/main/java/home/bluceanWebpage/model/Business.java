@@ -1,39 +1,24 @@
 package home.bluceanWebpage.model;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 public class Business {
-    private String CompanyLogo;
-    private String CompanyName;
+    private String companyLogo;
+    private String companyName;
     private String description;
+    private String period;
+
 
     // 생성자
-    public Business(String CompanyLogo, String CompanyName,  String description) {
-        this.CompanyLogo = CompanyLogo;
-        this.CompanyName = CompanyName;
+    public Business(String companyLogo, String companyName,  String description, String period) {
+        this.companyLogo = companyLogo;
+        this.companyName = companyName;
         this.description = description;
+        this.period = period;
     }
 
-    // 게터 세터
-    public String getCompanyLogo() {
-        return CompanyLogo;
-    }
 
-    public void setCompanyLogo(String companyLogo) {
-        CompanyLogo = companyLogo;
-    }
-
-    public String getCompanyName() {
-        return CompanyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        CompanyName = companyName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
