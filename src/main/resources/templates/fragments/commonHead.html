@@ -1,14 +1,18 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+<style>
+    .enlarged-logo {
+        width: 150px;
+    }
+</style>
 <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-light fixed-top">
     <div class="container px-5">
-        <a class="navbar-brand text-primary" href="/main/#mainSection1">
-<!--            <img src="/img/logo.svg" alt="더블루션 로고" width="140px">-->
-            THEBLUECEAN
+        <a class="enlarged-logo" href="/main/#mainSection1">
+            <img src="/img/logo.svg" alt="더블루션 로고">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-lg-5">
-                <li class="nav-item"><a class="nav-link" href="/main/#mainSection1">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/main/#mainSection1">회사소개</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         API솔루션 소개

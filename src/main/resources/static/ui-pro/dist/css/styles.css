@@ -20212,12 +20212,7 @@ section {
 }
 
 /* solutionDev */
-.buttonArea button {
-  width: 250px;
-}
-.buttonArea button a{
-  color:#fff;
-}
+
 
 .scroller {
   width: 2px;
@@ -20262,7 +20257,58 @@ section {
     height: auto; /* 가로 비율을 유지하며 이미지 크기를 조정합니다 */
   }
   .my-3 {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
+
+/*임시로 가져와봤음*/
+.solution_mouse {
+  width: 2px;
+  padding: 4px 12px;
+  height: 28px;
+  border: 2px solid #495057;
+  border-radius: 12px;
+  opacity: .75;
+  box-sizing: content-box;
+}
+
+/*솔루션 스크롤다운(임시)*/
+.solution_scrollDowns{
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 20px;
+  margin: auto;
+  width: 30px;
+  height: 44px;
+  z-index: 1;
+}
+/*솔루션 페이지 버튼*/
+.buttonArea button {
+  width: 250px;
+}
+.buttonArea button a{
+  color:#fff;
+}
+
+@keyframes mouseScroll {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(9px);
+    opacity: 0;
+  }
+}
+
+/*헤더 로그 사이즈*/
+.enlarged-logo {
+  width: 150px;
+}
+
 

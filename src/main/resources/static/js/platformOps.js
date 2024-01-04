@@ -1,4 +1,11 @@
-// // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
+//애니메이션 효과 라이브러리
+AOS.init({
+    disable: 'mobile',
+    duration: 600,
+    once: true,
+});
+
+// DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
         { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
@@ -7,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { image: '/img/Biz/1200x630wa.png', title: 'KT 에어맵 플랫폼 운영4', date: '2018년~' },
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영3', date: '2021년~' },
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2019~2021년' },
+        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영6', date: '2019~2021년' },
     ];
 
     // cardsData 배열 순회
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const numberOfCards = countCards();
-    console.log('총 카드 수 : ', numberOfCards);
+    // console.log('총 카드 수 : ', numberOfCards);
 
     /*===카드 날짜(최신순 과거순) ============================================================================================================*/
 
@@ -83,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const cardDates = cards.map((card, index) => {
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
-        console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
+        // console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
         return { dateInfo, card };
     });
 
@@ -118,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateA = yearAa === yearBa ? yearAa : Math.max(yearAa, yearBa);
         const dateB = yearAb === yearBb ? yearAb : Math.max(yearAb, yearBb);
 
-        console.log(`dateA: ${dateA}, dateB: ${dateB}`); // 날짜를 콘솔에 출력
+        // console.log(`dateA: ${dateA}, dateB: ${dateB}`); // 날짜를 콘솔에 출력
 
         return dateB - dateA; // 내림차순 정렬
     });
