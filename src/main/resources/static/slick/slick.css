@@ -6,6 +6,7 @@
     display: block;
     box-sizing: border-box;
 
+
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -76,11 +77,13 @@
 
 .slick-slide
 {
+    border-radius: 5%;
+    margin: 25px;
     display: none;
     float: left;
-
     height: 100%;
     min-height: 1px;
+
 }
 [dir='rtl'] .slick-slide
 {

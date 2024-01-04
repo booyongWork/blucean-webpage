@@ -1,12 +1,12 @@
 // // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
-        { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2018년11월' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영2', date: '2019년12월' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영3', date: '2020년1월' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영4', date: '2023년11월' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2021년11월' },
-        // { image: '/img/Biz/img_s1_05.png', title: 'KT 에너지 서비스 플랫폼 운영5', date: '2021년11월' },
+        { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2017~2021월' },
+        { image: '/img/Biz/1648896908044.jpg', title: 'KT 에어맵 플랫폼 운영2', date: '2021~2022년' },
+        { image: '/img/Biz/1200x630wa.png', title: 'KT 에어맵 플랫폼 운영4', date: '2018년~' },
+        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영3', date: '2021년~' },
+        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2019~2021년' },
     ];
 
     // cardsData 배열 순회
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // 카드 푸터 엘리먼트 생성
         const cardFooter = document.createElement('div');
         cardFooter.classList.add('card-footer');
+        cardFooter.style.textAlign = 'center';
 
         // 카드 헤더 엘리먼트 생성
         const cardHeader = document.createElement('div');
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cardHeader.style.display = 'flex';
         cardHeader.style.justifyContent = 'center';
         cardHeader.style.alignItems = 'center';
+        cardHeader.style.height = '250px';
 
         // 카드 이미지 추가
         const cardImageContainer = document.createElement('div');
@@ -81,15 +83,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const cardDates = cards.map((card, index) => {
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
-        // console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
+        console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
         return { dateInfo, card };
     });
 
     // 날짜 기준 내림차순 정렬
     cardDates.sort((a, b) => {
-        // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-        const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-        const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
+        const getYear = (dateString) => {
+            const yearRegex = /\d{4}/; // 4자리 연도에 매칭되는 정규식
+            let yearA, yearB;
+
+            if (dateString.includes('~')) {
+                // ~가 포함된 경우 연도를 찾아냄
+                const matchA = dateString.match(yearRegex);
+                yearA = matchA ? parseInt(matchA[0]) : 0;
+
+                // 두 번째 연도를 찾아냄
+                const parts = dateString.split('~');
+                const matchB = parts[1].match(yearRegex);
+                yearB = matchB ? parseInt(matchB[0]) : new Date().getFullYear(); // 현재 연도를 기본값으로 설정
+            } else {
+                // ~가 없는 경우 연도를 찾아냄
+                const match = dateString.match(yearRegex);
+                yearA = match ? parseInt(match[0]) : 0;
+                yearB = yearA; // ~가 없는 경우 같은 연도를 설정
+            }
+
+            return { yearA, yearB };
+        };
+
+        const { yearA: yearAa, yearB: yearBa } = getYear(a.dateInfo);
+        const { yearA: yearAb, yearB: yearBb } = getYear(b.dateInfo);
+
+        const dateA = yearAa === yearBa ? yearAa : Math.max(yearAa, yearBa);
+        const dateB = yearAb === yearBb ? yearAb : Math.max(yearAb, yearBb);
+
+        console.log(`dateA: ${dateA}, dateB: ${dateB}`); // 날짜를 콘솔에 출력
 
         return dateB - dateA; // 내림차순 정렬
     });
@@ -124,8 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#slider').slick({
         slidesToShow: slidesToShowValue, // 한 번에 보여질 슬라이드의 수
         slidesToScroll: slidesToShowValue, // 한 번에 스크롤 될 슬라이드의 수
-        // autoplay: true, // 자동 재생 기능을 활성화
-        // autoplaySpeed: 2000, // 자동 재생 속도
+        autoplay: true, // 자동 재생 기능을 활성화
+        autoplaySpeed: 2000, // 자동 재생 속도
         prevArrow: "<button type='button' class='slick-prev'>이전</button>",
         nextArrow: "<button type='button' class='slick-next'>다음</button>",
         responsive: [

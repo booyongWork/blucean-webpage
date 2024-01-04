@@ -18431,7 +18431,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+  /*box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);*/
 }
 .card .card-header {
   font-weight: 500;
@@ -20255,12 +20255,14 @@ section {
   margin: auto auto 24px;
 }
 
+/*슬릭 슬라이더시 이미지 축소*/
 @media screen and (max-width: 922px) {
   .pricing-columns-price img {
     max-width: 100%; /* 이미지의 최대 너비를 부모 요소에 맞춰 조정합니다 */
     height: auto; /* 가로 비율을 유지하며 이미지 크기를 조정합니다 */
   }
+  .my-3 {
+    font-size: 15px;
+  }
 }
-
-
 
