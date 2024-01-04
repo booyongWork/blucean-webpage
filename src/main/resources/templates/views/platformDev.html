@@ -38,9 +38,15 @@
         </div>
     </div>
 
+    <div class="btnSection">
+        <div class="nContainer" style="padding: 0 10px 10px 0; text-align: right">
+            <button id="toggleBtn" class="btn btn-blue-soft btn-sm">슬라이드로 보기</button>
+            <button class="btn btn-blue-soft btn-sm" onclick="sortList('latest')">최신순</button>
+            <button class="btn btn-blue-soft btn-sm" onclick="sortList('oldest')">과거순</button>
+        </div>
+    </div>
     <!-- 카드섹션 -->
-    <div class="businessSection" style="display: flex;
-    justify-content: center">
+    <div class="businessSection" style="display: flex; justify-content: center">
         <div id="nContainer" class="nContainer">
             <div id="cardGroup" style="display: flex; flex-wrap: wrap;">
                 <div th:each="business : ${businessList}" class="card" style="width: 250px; justify-content:center; margin-right:10px; margin-bottom: 10px;">
@@ -49,7 +55,8 @@
                     </div>
                     <div class="card-footer">
                         <h4><span th:text="${business.companyName}"></span></h4>
-                        <p th:text="${business.description}"></p>
+                        <p th:text="${business.description}" style="margin-bottom: 0.5rem"></p>
+                        <p class="period" th:text="${business.period}" style="color: #888"></p>
                     </div>
                 </div>
             </div>
@@ -77,37 +84,71 @@
 
         if (cards.length <= 12) {   // 조건 12개 보다 같거나 작을 때
             if (cards.length === 1) {
-                // 카드 1개일 때
                 cards[0].style.width = "400px";
-            } else if (cards.length % 2 === 0) {
-                // 2의 배수일 때
-                for (let i = 0; i < cards.length; i++) {
-                    cards[i].style.width = "450px";
-                }
-            } else if (cards.length % 3 === 0 || cards.length % 5 === 0) {
-                // 3, 5의 배수일 때
-                for (let i = 0; i < cards.length; i++) {
-                    cards[i].style.width = "300px";
-                }
-            }
-        } else if (cards.length > 12) {
-            // nContainer.style.overflow = "hidden";
-            cardContainer.style.display = "flex";
-            cardContainer.style.flexWrap = "nowrap";
-            cardContainer.style.animation = "scroll-left 10s linear infinite";
-            for (let i = 0; i < cards.length; i ++) {
-
-                cards[i].style.width = "250px";
-                cards[i].style.flex  = "0 0 auto";
-
-
+            } else if (cards.length === 2) {
+                cards[0].style.width = "450px";
+            } else if (cards.length === 3) {
+                cards[0].style.width = "300px";
             }
         }
+            // if (cards.length === 1) {
+            //     // 카드 1개일 때
+            //     cards[0].style.width = "400px";
+            // } else if (cards.length % 2 === 0) {
+            //     // 2의 배수일 때
+            //     for (let i = 0; i < cards.length; i++) {
+            //         cards[i].style.width = "450px";
+            //     }
+            // } else if (cards.length % 3 === 0 || cards.length % 5 === 0) {
+            //     // 3, 5의 배수일 때
+            //     for (let i = 0; i < cards.length; i++) {
+            //         cards[i].style.width = "300px";
+            //     }
+            // }
+        // } else if (cards.length > 12) {
+        //     // nContainer.style.overflow = "hidden";
+        //     cardContainer.style.display = "flex";
+        //     cardContainer.style.flexWrap = "nowrap";
+        //     cardContainer.style.animation = "scroll-left 10s linear infinite";
+        //     for (let i = 0; i < cards.length; i ++) {
+        //
+        //         cards[i].style.width = "250px";
+        //         cards[i].style.flex  = "0 0 auto";
+        //
+        //
+        //     }
+        // }
     }
 
-    function addHoverEffect() {
-        let cardContainer = document.getElementById("cardGroup");
+    function sortList(order) {
+        let cardGroup = document.getElementById("cardGroup");
+        let cards = Array.from(cardGroup.getElementsByClassName("card"));
 
+        cards.sort(function(a, b) {
+            let periodA = extractPeriod(a.querySelector(".period").textContent);
+            let periodB = extractPeriod(b.querySelector(".period").textContent);
 
+            if (order === 'latest') {
+                return periodB - periodA;
+            } else if (order === 'oldest') {
+                return periodA - periodB;
+            }
+        });
+
+        cardGroup.innerHTML = ''; // 정렬 전 카드그룹 비우기
+
+        cards.forEach(card => cardGroup.appendChild(card)); // 정렬된 카드 카드그룹에 다시 추가
+    }
+
+    function extractPeriod(text) {
+
+        let matches = text.match(/\d+/g); // 배열에 담아서
+        if (matches) {
+            let lastFourNum = matches[matches.length - 1].slice(-4); // 뒤에서 4자리만 선택
+
+            return parseInt(lastFourNum) || 0;
+        }
+
+        return 0
     }
 </script>
