@@ -5,6 +5,7 @@ AOS.init({
     once: true,
 });
 
+
 // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const slider = document.getElementById('slider');
     slider.style.visibility = 'visible';
 
+    // 총 카드 수
     function countCards() {
         const cardContainer = document.getElementById('slider');
         const cards = cardContainer.getElementsByClassName('card');
@@ -82,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log('총 카드 수 : ', numberOfCards);
 
     /*===카드 날짜(최신순 과거순) ============================================================================================================*/
-
     // 모든 카드 요소를 선택
     const cardsContainer = document.querySelector('.pricing-columns');
     const cards = Array.from(cardsContainer.querySelectorAll('.card'));
@@ -91,58 +92,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const cardDates = cards.map((card, index) => {
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
-        // console.log(`카드 ${index + 1}의 날짜: ${dateInfo}`);
-        return { dateInfo, card };
+        const extractedDate = dateInfo.substring(0, 4); // 앞의 네 자리 추출
+        console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
+        return { dateInfo: extractedDate, card };
     });
 
-    // 날짜 기준 내림차순 정렬
+    // 날짜 정보를 비교하여 내림차순 정렬하는 함수
     cardDates.sort((a, b) => {
-        const getYear = (dateString) => {
-            const yearRegex = /\d{4}/; // 4자리 연도에 매칭되는 정규식
-            let yearA, yearB;
-
-            if (dateString.includes('~')) {
-                // ~가 포함된 경우 연도를 찾아냄
-                const matchA = dateString.match(yearRegex);
-                yearA = matchA ? parseInt(matchA[0]) : 0;
-
-                // 두 번째 연도를 찾아냄
-                const parts = dateString.split('~');
-                const matchB = parts[1].match(yearRegex);
-                yearB = matchB ? parseInt(matchB[0]) : new Date().getFullYear(); // 현재 연도를 기본값으로 설정
-            } else {
-                // ~가 없는 경우 연도를 찾아냄
-                const match = dateString.match(yearRegex);
-                yearA = match ? parseInt(match[0]) : 0;
-                yearB = yearA; // ~가 없는 경우 같은 연도를 설정
-            }
-
-            return { yearA, yearB };
-        };
-
-        const { yearA: yearAa, yearB: yearBa } = getYear(a.dateInfo);
-        const { yearA: yearAb, yearB: yearBb } = getYear(b.dateInfo);
-
-        const dateA = yearAa === yearBa ? yearAa : Math.max(yearAa, yearBa);
-        const dateB = yearAb === yearBb ? yearAb : Math.max(yearAb, yearBb);
-
-        // console.log(`dateA: ${dateA}, dateB: ${dateB}`); // 날짜를 콘솔에 출력
-
-        return dateB - dateA; // 내림차순 정렬
+        const dateA = new Date(a.dateInfo);
+        const dateB = new Date(b.dateInfo);
+        if (dateA > dateB) {
+            return -1; // dateA가 dateB보다 크면 dateA를 더 앞으로 위치시킴
+        } else if (dateA < dateB) {
+            return 1; // dateA가 dateB보다 작으면 dateB를 더 앞으로 위치시킴
+        }
+        return 0; // 같은 경우 순서 변경하지 않음
     });
 
     // 날짜 기준 오름차순 정렬
     // cardDates.sort((a, b) => {
-    //     // '년월' 형식의 문자열로부터 날짜를 추출하여 비교
-    //     const dateA = new Date(a.dateInfo.replace('년', '-').replace('월', '-'));
-    //     const dateB = new Date(b.dateInfo.replace('년', '-').replace('월', '-'));
-    //
-    //     return dateA - dateB; // 오름차순 정렬
+    //     const dateA = new Date(a.dateInfo);
+    //     const dateB = new Date(b.dateInfo);
+    //     if (dateA > dateB) {
+    //         return 1; // dateA가 dateB보다 크면 dateB를 더 앞으로 위치시킴
+    //     } else if (dateA < dateB) {
+    //         return -1; // dateA가 dateB보다 작으면 dateA를 더 앞으로 위치시킴
+    //     }
+    //     return 0; // 같은 경우 순서 변경하지 않음
     // });
 
     // console.log("정렬된 카드 배열" + cardDates);
 
-    // 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가합니다.
+    // 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가
     cards.forEach(card => card.remove()); // 기존 카드 모두 제거
     // 정렬된 순서대로 DOM 요소를 다시 배치합니다.
     cardDates.forEach((item) => {
