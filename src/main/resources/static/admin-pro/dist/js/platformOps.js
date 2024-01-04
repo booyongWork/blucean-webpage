@@ -1,7 +1,7 @@
 // // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2018년11월' },
+        { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2018년11월' },
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영2', date: '2019년12월' },
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영3', date: '2020년1월' },
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영4', date: '2023년11월' },
@@ -128,6 +128,22 @@ document.addEventListener("DOMContentLoaded", function() {
         // autoplaySpeed: 2000, // 자동 재생 속도
         prevArrow: "<button type='button' class='slick-prev'>이전</button>",
         nextArrow: "<button type='button' class='slick-next'>다음</button>",
+        responsive: [
+            {
+                breakpoint: 768, // 태블릿까지
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480, // 모바일까지
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
 
     // 슬라이드가 완성된 후 보이도록 변경

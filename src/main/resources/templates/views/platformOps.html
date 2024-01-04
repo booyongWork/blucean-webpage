@@ -1,6 +1,6 @@
 <!--
 파일이름 : solutionDev.html
-작 성 자 : JBY
+작 성 자 :
 작 성 일 : 2023.11.30
 설 명 : 더블루션 플랫폼 운영 설명 페이지
 -->
@@ -18,55 +18,43 @@
         color: black;
         background-color: white;
     }
-
-    /*버튼 색상*/
-    .slick-prev:before {
-        color: black;
-    }
-    .slick-next:before {
-        color: black;
-    }
-
-    .card {
-        width: 150px;
-        height: 320px;
-    }
-
-    .card img {
-        display: block; /* 이미지를 블록 요소로 변경하여 가운데 정렬 */
-        margin: 0 auto; /* 좌우 마진을 auto로 설정하여 이미지를 가운데 정렬 */
-    }
-
-    #slider {
-        text-align: center; /* 부모 요소인 #slider를 기준으로 가운데 정렬 */
-    }
 </style>
 <body>
 <main>
-    <!-- 플랫폼운영 타이틀 및 버튼 -->
-    <div class="wrap" style="padding: 180px 0 60px;">
-        <div class="nContainer">
-            <div class="textArea" style="text-align: center;">
-                <h2 class="f-48" style="font-weight: 800">더블루션 플랫폼 운영</h2>
-                <p>변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
-            </div>
-            <div class="buttonArea row" style="text-align: center">
-                <div style="margin-top: 3%;">
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
-                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'" style="background-color: #2196f3; color: white;">폴랫폼 운영</button>
+    <div id="layoutDefault">
+        <div id="layoutDefault_content">
+            <!-- Page Header-->
+            <header class="page-header-ui page-header-ui-light bg-white text-center"> <!-- Added 'text-center' class -->
+                <div class="page-header-ui-content pt-5">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-6 mx-auto" data-aos="fade-up"> <!-- Added 'mx-auto' class to center the column -->
+                                <h1 class="page-header-ui-title">더블루션 플랫폼 운영</h1>
+                                <p class="page-header-ui-text mb-5">변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
+                            </div>
+                            <div class="buttonArea row" style="text-align: center">
+                                <div style="margin-top: 3%;">
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
+                                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'" style="background-color: #2196f3; color: white;">폴랫폼 운영</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="businessSection" style="display: flex; justify-content: center">
-        <div id="nContainer" class="nContainer" style="margin-bottom: 100px;">
-            <div class="row">
-                <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden;"></div>
-            </div>
+            </header>
+<!--            <section class="bg-light py-10">-->
+                <div class="container px-5" style="margin-bottom: 100px;">
+                    <div class="row">
+                        <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden;"></div>
+                    </div>
+                </div>
+<!--            </section>-->
         </div>
     </div>
 </main>
 </body>
 </html>
+<script type="text/javascript">
+
+</script>

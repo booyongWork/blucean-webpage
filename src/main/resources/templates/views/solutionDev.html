@@ -9,21 +9,11 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/defaultLayout}" layout:fragment="content">
-<!--<script type="text/javascript" th:src="@{/admin-pro/dist/js/solutionDev.js}"></script>-->
+<script type="text/javascript" th:src="@{/admin-pro/dist/js/solutionDev.js}"></script>
 <head>
     <title>The Blucean</title>
 </head>
 <style>
-    body {
-        color: black;
-        background-color: white;
-    }
-
-    /*버튼 요소 가로 나열*/
-    #button-container > div {
-        /*margin-top: 50px;*/
-        display: inline-block; /* 요소들을 가로로 나열 */
-    }
 
     /*KBANK 로그 배치위치*/
     .image-container {
@@ -48,126 +38,159 @@
 
 </style>
 <body>
-<!--Thymeleaf 템플릿 엔진 header 부분을 대체(replace)-->
-<!--<div th:replace="fragments/commonHead :: header"></div>-->
 <main>
-    <!-- 솔루션 타이틀 및 버튼 -->
-    <div class="wrap" id="wrap" style="padding: 180px 0 60px;">
-        <div class="nContainer">
-            <div class="textArea" style="text-align: center;">
-                <h2 class="f-48" style="font-weight: 800">더블루션 API 솔루션</h2>
-                <p>통합 시뮬레이터 및 테스트 포털 구축 API입니다.<br>&nbsp</p>
-            </div>
-            <div class="buttonArea row" style="text-align: center">
-                <div style="margin-top: 3%;">
-                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'" style="background-color: #2196f3; color: white;">API 솔루션</button>
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main page content-->
-    <div class="nContainer">
-        <div class="card card-waves mb-4 mt-0">
-            <div class="card card-waves mb-4 mt-5">
-                <div class="card-body p-5">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col">
-                            <h2 class="text-primary">솔루션 관련 임의로 넣어놓은 이미지입니다.</h2>
-                            <p class="text-gray-700">Great job, your affiliate dashboard is ready to go! You can view sales, generate links, prepare coupons, and download affiliate reports using this dashboard.</p>
-                            <a class="btn btn-primary p-3" href="#!">
-                                Get Started
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ms-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
+    <div id="layoutDefault">
+        <div id="layoutDefault_content">
+            <!-- Page Header-->
+            <header class="page-header-ui page-header-ui-light bg-white text-center"> <!-- Added 'text-center' class -->
+                <div class="page-header-ui-content pt-5">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-6 mx-auto" data-aos="fade-up"> <!-- Added 'mx-auto' class to center the column -->
+                                <h1 class="page-header-ui-title">더블루션 API 솔루션</h1>
+                                <p class="page-header-ui-text mb-5">통합 시뮬레이터 및 테스트 포털 구축 API입니다.<br>&nbsp</p>
+                            </div>
+                            <div class="buttonArea row" style="text-align: center">
+                                <div style="margin-top: 3%;">
+                                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'" style="background-color: #2196f3; color: white;">API 솔루션</button>
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5" src="/img/Biz/statistics.svg"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- faq 영역버전 -->
-    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
-        <div class="d-flex align-items-center justify-content-center flex-column">
-            <div class="titleBadge m-1">
-                API 솔루션
-            </div>
-            <h4 class="f-32 mb-3">
-                FAQ
-            </h4>
-        </div>
-    </div>
-    <div class="nContainer">
-        <div class="card mb-4">
-            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                <div class="w-100 d-flex justify-content-between align-items-center">
-                    <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>
-                    <div style="display: flex; align-items: center;">
-                        <span style="vertical-align: middle;">▼</span>
+            </header>
+            <section class="bg-white py-10">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-md-9 col-lg-6 order-1 order-lg-0 aos-init aos-animate" data-aos="fade-right">
+                            <div class="content-skewed content-skewed-right"><img class="content-skewed-item img-fluid shadow-lg rounded-3" src="https://assets.startbootstrap.com/img/screenshots-product-pages/sb-ui-kit-pro/landing-portfolio.png" alt="..."></div>
+                        </div>
+                        <div class="col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0 aos-init aos-animate" data-aos="fade-left">
+                            <div class="mb-5">
+                                <h2>솔루션 임의 이미지입니다.</h2>
+                                <p class="lead">When you purchase this UI Kit, you get access to a robust suite of powerful tools and components to help you build your next landing page quickly and easily.</p>
+                            </div>
+                            <div class="row gx-5">
+                                <div class="col-md-6 mb-4">
+                                    <h6>Landing Pages</h6>
+                                    <p class="mb-2 small">We've crafted landing page examples for many popular business and product types.</p>
+                                    <a class="small text-arrow-icon" href="#!">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h6>Page Examples</h6>
+                                    <p class="mb-2 small mb-0">Use our pre-built page examples to quickly create inner pages to your website.</p>
+                                    <a class="small text-arrow-icon" href="#!">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row gx-5">
+                                <div class="col-md-6 mb-4">
+                                    <h6>Layouts</h6>
+                                    <p class="mb-2 small mb-0">Our flex box based layout options make your site beautifully responsive and adaptable to any device.</p>
+                                    <a class="small text-arrow-icon" href="#!">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h6>Modular Sections</h6>
+                                    <p class="small mb-0">All of the sections on each page are modular, so you can drop them into an existing page, or start with a new one!</p>
+                                    <a class="small text-arrow-icon" href="#!">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body accordion-body" style="display: none;">
-                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
-                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-            </div>
-        </div>
-    </div>
-    <div class="nContainer">
-        <div class="card mb-4">
-            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                <div class="w-100 d-flex justify-content-between align-items-center">
-                    <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>
-                    <div style="display: flex; align-items: center;">
-                        <span style="vertical-align: middle;">▼</span>
+            </section>
+            <section class="bg-white py-10">
+                <div class="container px-5">
+                    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
+                        <div class="d-flex align-items-center justify-content-center flex-column">
+                            <div class="titleBadge m-1">
+                                API 솔루션
+                            </div>
+                            <h4 class="f-32 mb-3">
+                                FAQ
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <h2 class="my-3">Q. 웹사이트 접속자가 많아지면 느려지거나, 서버가 다운되는 일이 생기진 않겠죠?</h2>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="vertical-align: middle;">▼</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body accordion-body" style="display: none;">
+                            <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                            <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <h2 class="my-3">Q. 제작이 완료된 후 에 수정을 하고 싶은데, 어떻게 해야 하나요?</h2>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="vertical-align: middle;">▼</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body accordion-body" style="display: none;">
+                            <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                            <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="vertical-align: middle;">▼</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body accordion-body" style="display: none;">
+                            <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
+                            <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body accordion-body" style="display: none;">
-                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
-                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-            </div>
-        </div>
-    </div>
-    <div class="nContainer">
-        <div class="card mb-4">
-            <div class="card-header d-flex align-items-center" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                <div class="w-100 d-flex justify-content-between align-items-center">
-                    <h2 class="my-3">Q. 웹사이트 제작 후 버그가 발생하면 어떻게 하나요?</h2>
-                    <div style="display: flex; align-items: center;">
-                        <span style="vertical-align: middle;">▼</span>
+            </section>
+            <section class="bg-white py-10">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
+                    <div class="d-flex align-items-center justify-content-center flex-column">
+                        <div class="titleBadge m-1">
+                            시작부터 성공까지
+                        </div>
+                        <h4 class="f-32 mb-3">
+                            더블루션과 함께
+                        </h4>
                     </div>
                 </div>
-            </div>
-            <div class="card-body accordion-body" style="display: none;">
-                <p class="lead">A. Here's an example of what an article in your knowledge base will look like.</p>
-                <p class="lead">You can use the paragraph element along with other typography elements and text tools to create articles within your knowledge base. This is a great way to display support information to your users.</p>
-            </div>
+                <div class="image-container">
+                    <img id="logoDefault" src="/img/Biz/1200x630wa.png" alt="logo">
+                    <img id="logoChange" src="/img/Biz/1648896908044.jpg" alt="logo">
+                </div>
+                <a href="">
+                    <div class="scrollTop">
+                        <img src="/img/arrow-top.png" style="width: 50%; vertical-align: top; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+                    </div>
+                </a>
+            </section>
         </div>
     </div>
-    <!-- faq part 끝 -->
-    <div class="card-body d-flex justify-content-center align-items-center flex-column" style="margin-top: 5%;">
-        <div class="d-flex align-items-center justify-content-center flex-column">
-            <div class="titleBadge m-1">
-                시작부터 성공까지
-            </div>
-            <h4 class="f-32 mb-3">
-                더블루션과 함께
-            </h4>
-        </div>
-    </div>
-    <div class="image-container">
-        <img id="logoDefault" src="/img/Biz/1200x630wa.png" alt="logo">
-        <img id="logoChange" src="/img/Biz/1648896908044.jpg" alt="logo">
-    </div>
-    <a href="#wrap">
-        <div class="scrollTop">
-            <img src="/img/arrow-top.png" style="width: 50%; vertical-align: top; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-        </div>
-    </a>
 </main>
 </body>
 </html>
