@@ -3,7 +3,7 @@
 // 작 성 일 : 2024.01.03
 // 설 명 : 더블루션 플랫폼 운영 js 적용
 
-// DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
+// 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
         { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
@@ -15,28 +15,24 @@ document.addEventListener("DOMContentLoaded", function() {
         { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영6', date: '2019~2021년' },
     ];
 
-    // cardsData 배열 순회
+    // cardsData html로 구성하는 부분
     cardsData.forEach(card => {
-        // 새로운 카드 엘리먼트 생성
+        // div 생성 후 class 기입
         const newCard = document.createElement('div');
         newCard.classList.add('card');
-        // 카드 푸터 엘리먼트 생성
-        const cardFooter = document.createElement('div');
-        cardFooter.classList.add('card-footer');
-        cardFooter.style.textAlign = 'center';
 
-        // 카드 헤더 엘리먼트 생성
+        // 카드 섹션은 헤더와 풋터로 이뤄짐.
         const cardHeader = document.createElement('div');
-        cardHeader.classList.add('card-header', 'bg-transparent');
+        cardHeader.classList.add('card-header', 'bg-transparent'); //클래스 적용 css
         cardHeader.style.display = 'flex';
         cardHeader.style.justifyContent = 'center';
         cardHeader.style.alignItems = 'center';
         cardHeader.style.height = '250px';
 
-        // 카드 이미지 추가
+        // 이미지 틀에 이미지 추가
         const cardImageContainer = document.createElement('div');
-        cardImageContainer.classList.add('pricing-columns-price');
-        const cardImage = document.createElement('img');
+        cardImageContainer.classList.add('pricing-columns-price'); //클래스 적용 css
+        const cardImage = document.createElement('img'); // img 태그 생성
         cardImage.src = card.image;
         cardImageContainer.appendChild(cardImage);
 
@@ -45,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 카드에 헤더 추가
         newCard.appendChild(cardHeader);
+
+        // 카드 푸터 엘리먼트 생성
+        const cardFooter = document.createElement('div');
+        cardFooter.classList.add('card-footer');
+        cardFooter.style.textAlign = 'center';
 
         // 카드 제목 추가 (h4 요소 생성)
         const cardTitle = document.createElement('h4');
@@ -64,11 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cardContainer.appendChild(newCard);
     });
 
-    // 모든 카드가 추가된 후에 visibility를 변경하여 화면에 표시
-    const slider = document.getElementById('slider');
-    slider.style.visibility = 'visible';
-
-    // 총 카드 수
+    // 총 카드 수 따라 정렬 3 or 4
     function countCards() {
         const cardContainer = document.getElementById('slider');
         const cards = cardContainer.getElementsByClassName('card');
@@ -86,27 +83,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const cards = Array.from(cardsContainer.querySelectorAll('.card'));
 
     // 각 카드 날짜 정보 추출 후 배열에 저장
-    const cardDates = cards.map((card, index) => {
+    const cardDates = cards.map((card, index) => { //Arrow 함수 사용하면 funtion X 코드 간결
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
         const extractedDate = dateInfo.substring(0, 4); // 앞의 네 자리 추출
-        // console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
+        console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
         return { dateInfo: extractedDate, card };
     });
 
-    // 날짜 정보를 비교하여 내림차순 정렬하는 함수
+    // 날짜 정보를 비교하여 **내림차순** 정렬하는 함수
     cardDates.sort((a, b) => {
         const dateA = new Date(a.dateInfo);
         const dateB = new Date(b.dateInfo);
         if (dateA > dateB) {
-            return -1; // dateA가 dateB보다 크면 dateA를 더 앞으로 위치시킴
+            return -1; // dateA가 dateB보다 크면 *dateA*를 더 *앞으로* 위치시킴
         } else if (dateA < dateB) {
-            return 1; // dateA가 dateB보다 작으면 dateB를 더 앞으로 위치시킴
+            return 1; // dateA가 dateB보다 작으면 *dateB*를 더 *앞으로* 위치시킴
         }
         return 0; // 같은 경우 순서 변경하지 않음
     });
 
-    // 오름차순 정렬
+    //.TODO:booyong 정렬방식 결정에 따라 삭제예정
+    // **오름차순** 정렬
     // cardDates.sort((a, b) => {
     //     const dateA = new Date(a.dateInfo);
     //     const dateB = new Date(b.dateInfo);
@@ -120,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // console.log("정렬된 카드 배열" + cardDates);
 
-    // 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가
+    // 정렬 함수때문에 기존 카드를 제거하고, 정렬된 순서대로 새로운 순서로 추가
     cards.forEach(card => card.remove()); // 기존 카드 모두 제거
     // 정렬된 순서대로 DOM 요소를 다시 배치합니다.
     cardDates.forEach((item) => {

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         newCard.classList.add('card'); //클래스 적용 css
         newCard.style.borderRadius = '5%';
 
-        // 카드 섹션은 카드 헤더로만 이뤄짐.
+        // 카드 섹션은 카드 헤더로만 이뤄짐
         const cardHeader = document.createElement('div');
         cardHeader.classList.add('card-header', 'bg-transparent'); //클래스 적용 css
         cardHeader.style.display = 'flex';
@@ -86,7 +86,7 @@ function toggleAccordion(clickedElement) { //전역변수 가져와서
         accordionBody.style.display = 'none';
         icon.textContent = '▼'; // 닫혔을 때 아이콘 변경
     } else {
-        // 클릭한 아코디언만 열기
+        // 닫혀있는 아코디언 열기
         accordionBody.style.display = 'block';
         icon.textContent = '◀'; // 열렸을 때 아이콘 변경
     }
