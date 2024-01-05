@@ -20438,6 +20438,11 @@ section {
   color: white;
 }
 
+.biz-btn:hover {
+  background-color: #2196f3;
+  color: white;
+}
+
 /*아코디언 설정*/
 .accordion-card-header {
   cursor: pointer;

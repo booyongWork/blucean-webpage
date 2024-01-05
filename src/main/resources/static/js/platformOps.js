@@ -3,14 +3,6 @@
 // 작 성 일 : 2024.01.03
 // 설 명 : 더블루션 플랫폼 운영 js 적용
 
-
-//애니메이션 효과 라이브러리
-AOS.init({
-    disable: 'mobile',
-    duration: 600,
-    once: true,
-});
-
 // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
@@ -75,8 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // 모든 카드가 추가된 후에 visibility를 변경하여 화면에 표시
     const slider = document.getElementById('slider');
     slider.style.visibility = 'visible';
-    const wave = document.getElementById('wave');
-    wave.style.visibility = 'visible';
 
     // 총 카드 수
     function countCards() {
@@ -100,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
         const extractedDate = dateInfo.substring(0, 4); // 앞의 네 자리 추출
-        console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
+        // console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
         return { dateInfo: extractedDate, card };
     });
 
@@ -169,10 +159,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         ]
-    });
-
-    // 슬라이드가 완성된 후 보이도록 변경
-    $('#slider').on('init', function() {
-        $(this).css({ visibility: 'visible', opacity: 1 });
     });
 });
