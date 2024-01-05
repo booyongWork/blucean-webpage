@@ -5,7 +5,6 @@ AOS.init({
     once: true,
 });
 
-
 // DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
@@ -70,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // 모든 카드가 추가된 후에 visibility를 변경하여 화면에 표시
     const slider = document.getElementById('slider');
     slider.style.visibility = 'visible';
+    const wave = document.getElementById('wave');
+    wave.style.visibility = 'visible';
 
     // 총 카드 수
     function countCards() {

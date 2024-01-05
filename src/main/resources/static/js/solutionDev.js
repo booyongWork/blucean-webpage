@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // FAQ **아코디언 클릭**하는 버전
 function toggleAccordion(clickedElement) {
-    const accordionBody = clickedElement.nextElementSibling;
+    const accordionBody = clickedElement.nextElementSibling; // 주어진 요소의 다음 형제 요소 -> accordionBody
     const icon = clickedElement.querySelector('span');
     const isClosing = accordionBody.style.display === 'block';
 
