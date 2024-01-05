@@ -1,12 +1,18 @@
+<!--
+파일이름 : solutionDev.js
+작 성 자 : 정부용
+작 성 일 : 2024.01.03
+설 명 : 더블루션 솔루션 js 적용
+-->
+
 //애니메이션 효과 라이브러리
 AOS.init({
     disable: 'mobile',
-    duration: 600,
+    duration: 600, //지속시간 10분
     once: true,
 });
 
-
-// DOMContentLoaded 이벤트 발생 시 실행될 함수 등록
+// 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
         { image: '/img/Biz/1200x630wa.png' },
