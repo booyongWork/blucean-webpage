@@ -5,150 +5,220 @@
 설 명 : 더블루션 플랫폼 개발 설명 페이지
 -->
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<!--  css  -->
-<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>
-<!--  jquery  -->
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>
-<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>
-
-
-<head>
-    <title>The Blucean</title>
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/defaultLayout}" layout:fragment="content">
+<script type="text/javascript" th:src="@{/js/platformOps.js}"></script>
 
 <body>
-<div th:replace="fragments/commonHead :: header"></div>
 <main>
-    <!-- 플랫폼개발 타이틀 및 버튼 -->
-    <div class="wrap" style="padding: 180px 0 100px;">
-        <div class="nContainer">
-            <div class="textArea" style="text-align: center;">
-                <h2 class="f-48" style="font-weight: 800">더블루션 플랫폼 개발</h2>
-                <p>변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
-            </div>
-            <div class="buttonArea row" style="text-align: center">
-                <div style="margin-top: 3%;">
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
-                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'" style="background-color: #2196f3; color: white;">폴랫폼 개발</button>
-                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="btnSection">
-        <div class="nContainer" style="padding: 0 10px 10px 0; text-align: right">
-            <button id="toggleBtn" class="btn btn-blue-soft btn-sm">슬라이드로 보기</button>
-            <button class="btn btn-blue-soft btn-sm" onclick="sortList('latest')">최신순</button>
-            <button class="btn btn-blue-soft btn-sm" onclick="sortList('oldest')">과거순</button>
-        </div>
-    </div>
-    <!-- 카드섹션 -->
-    <div class="businessSection" style="display: flex; justify-content: center">
-        <div id="nContainer" class="nContainer">
-            <div id="cardGroup" style="display: flex; flex-wrap: wrap;">
-                <div th:each="business : ${businessList}" class="card" style="width: 250px; justify-content:center; margin-right:10px; margin-bottom: 10px;">
-                    <div class="card-body" style="margin: 0 auto;">
-                        <img th:src="${business.companyLogo}" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <h4><span th:text="${business.companyName}"></span></h4>
-                        <p th:text="${business.description}" style="margin-bottom: 0.5rem"></p>
-                        <p class="period" th:text="${business.period}" style="color: #888"></p>
+    <div id="layoutDefault">
+        <div id="layoutDefault_content">
+            <!-- Page Header-->
+            <header class="page-header-ui page-header-ui-light bg-white text-center">
+                <div class="page-header-ui-content pt-5">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-6 mx-auto" data-aos="fade-up">
+                                <h1 class="page-header-ui-title">더블루션 플랫폼 운영</h1>
+                                <p class="page-header-ui-text mb-5">변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
+                            </div>
+                            <div class="buttonArea row">
+                                <div style="margin-top: 3%;">
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
+                                    <button class="btn me-2 my-1 btn-xl biz-btn" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
+                                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
+            <section class="bg-white">
+                <div class="container px-5">
+                    <div class="row">
+                        <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden; border-radius: 50%"></div>
+                    </div>
+                </div>
+                <div class="svg-border-waves text-dark">
+                    <!-- Wave SVG Border-->
+                    <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+                        <defs>
+                            <style>
+                                .a {
+                                    fill: none;
+                                }
+                                .b {
+                                    clip-path: url(#a);
+                                }
+                                .d {
+                                    opacity: 0.5;
+                                    isolation: isolate;
+                                }
+                            </style>
+                        </defs>
+                        <clippath id="a"><rect class="a" width="1920" height="75"></rect></clippath>
+                        <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
+                        <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
+                        <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
+                        <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
+                    </svg>
+                </div>
+            </section>
         </div>
     </div>
-
 </main>
-
-<footer th:fragment="footer" style="margin-top: 100px;">
-    <div th:replace="fragments/commonFooter :: footer"></div>
-</footer>
 </body>
 </html>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        cardLayout();
-        // addHoverEffect();
-    })
-    function cardLayout() {
-        let nContainer = document.getElementById("nContainer");
-        let cardContainer = document.getElementById("cardGroup");
-        let cards = cardContainer.getElementsByClassName("card");
+
+<!-- 기존 -->
+<!--<!DOCTYPE html>-->
+<!--<html lang="ko" xmlns:th="http://www.thymeleaf.org">-->
+<!--&lt;!&ndash;  css  &ndash;&gt;-->
+<!--<link rel="stylesheet" href="/admin-pro/dist/css/styles.css" th:href="@{/admin-pro/dist/css/styles.css}"/>-->
+<!--&lt;!&ndash;  jquery  &ndash;&gt;-->
+<!--<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery.min.js}"></script>-->
+<!--<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-3.6.0.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-3.6.0.min.js}"></script>-->
+<!--<script type="text/javascript" src="/admin-pro/dist/js/jquery/jquery-ui.min.js" th:src="@{/admin-pro/dist/js/jquery/jquery-ui.min.js}"></script>-->
 
 
-        if (cards.length <= 12) {   // 조건 12개 보다 같거나 작을 때
-            if (cards.length === 1) {
-                cards[0].style.width = "400px";
-            } else if (cards.length === 2) {
-                cards[0].style.width = "450px";
-            } else if (cards.length === 3) {
-                cards[0].style.width = "300px";
-            }
-        }
-            // if (cards.length === 1) {
-            //     // 카드 1개일 때
-            //     cards[0].style.width = "400px";
-            // } else if (cards.length % 2 === 0) {
-            //     // 2의 배수일 때
-            //     for (let i = 0; i < cards.length; i++) {
-            //         cards[i].style.width = "450px";
-            //     }
-            // } else if (cards.length % 3 === 0 || cards.length % 5 === 0) {
-            //     // 3, 5의 배수일 때
-            //     for (let i = 0; i < cards.length; i++) {
-            //         cards[i].style.width = "300px";
-            //     }
-            // }
-        // } else if (cards.length > 12) {
-        //     // nContainer.style.overflow = "hidden";
-        //     cardContainer.style.display = "flex";
-        //     cardContainer.style.flexWrap = "nowrap";
-        //     cardContainer.style.animation = "scroll-left 10s linear infinite";
-        //     for (let i = 0; i < cards.length; i ++) {
-        //
-        //         cards[i].style.width = "250px";
-        //         cards[i].style.flex  = "0 0 auto";
-        //
-        //
-        //     }
-        // }
-    }
+<!--<head>-->
+<!--    <title>The Blucean</title>-->
+<!--</head>-->
 
-    function sortList(order) {
-        let cardGroup = document.getElementById("cardGroup");
-        let cards = Array.from(cardGroup.getElementsByClassName("card"));
+<!--<body>-->
+<!--<div th:replace="fragments/commonHead :: header"></div>-->
+<!--<main>-->
+<!--    &lt;!&ndash; 플랫폼개발 타이틀 및 버튼 &ndash;&gt;-->
+<!--    <div class="wrap" style="padding: 180px 0 100px;">-->
+<!--        <div class="nContainer">-->
+<!--            <div class="textArea" style="text-align: center;">-->
+<!--                <h2 class="f-48" style="font-weight: 800">더블루션 플랫폼 개발</h2>-->
+<!--                <p>변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>-->
+<!--            </div>-->
+<!--            <div class="buttonArea row" style="text-align: center">-->
+<!--                <div style="margin-top: 3%;">-->
+<!--                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>-->
+<!--                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'" style="background-color: #2196f3; color: white;">폴랫폼 개발</button>-->
+<!--                    <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-        cards.sort(function(a, b) {
-            let periodA = extractPeriod(a.querySelector(".period").textContent);
-            let periodB = extractPeriod(b.querySelector(".period").textContent);
+<!--    <div class="btnSection">-->
+<!--        <div class="nContainer" style="padding: 0 10px 10px 0; text-align: right">-->
+<!--            <button id="toggleBtn" class="btn btn-blue-soft btn-sm">슬라이드로 보기</button>-->
+<!--            <button class="btn btn-blue-soft btn-sm" onclick="sortList('latest')">최신순</button>-->
+<!--            <button class="btn btn-blue-soft btn-sm" onclick="sortList('oldest')">과거순</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; 카드섹션 &ndash;&gt;-->
+<!--    <div class="businessSection" style="display: flex; justify-content: center">-->
+<!--        <div id="nContainer" class="nContainer">-->
+<!--            <div id="cardGroup" style="display: flex; flex-wrap: wrap;">-->
+<!--                <div th:each="business : ${businessList}" class="card" style="width: 250px; justify-content:center; margin-right:10px; margin-bottom: 10px;">-->
+<!--                    <div class="card-body" style="margin: 0 auto;">-->
+<!--                        <img th:src="${business.companyLogo}" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="card-footer">-->
+<!--                        <h4><span th:text="${business.companyName}"></span></h4>-->
+<!--                        <p th:text="${business.description}" style="margin-bottom: 0.5rem"></p>-->
+<!--                        <p class="period" th:text="${business.period}" style="color: #888"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-            if (order === 'latest') {
-                return periodB - periodA;
-            } else if (order === 'oldest') {
-                return periodA - periodB;
-            }
-        });
+<!--</main>-->
 
-        cardGroup.innerHTML = ''; // 정렬 전 카드그룹 비우기
+<!--<footer th:fragment="footer" style="margin-top: 100px;">-->
+<!--    <div th:replace="fragments/commonFooter :: footer"></div>-->
+<!--</footer>-->
+<!--</body>-->
+<!--</html>-->
 
-        cards.forEach(card => cardGroup.appendChild(card)); // 정렬된 카드 카드그룹에 다시 추가
-    }
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function () {-->
+<!--        cardLayout();-->
+<!--        // addHoverEffect();-->
+<!--    })-->
+<!--    function cardLayout() {-->
+<!--        let nContainer = document.getElementById("nContainer");-->
+<!--        let cardContainer = document.getElementById("cardGroup");-->
+<!--        let cards = cardContainer.getElementsByClassName("card");-->
 
-    function extractPeriod(text) {
 
-        let matches = text.match(/\d+/g); // 배열에 담아서
-        if (matches) {
-            let lastFourNum = matches[matches.length - 1].slice(-4); // 뒤에서 4자리만 선택
+<!--        if (cards.length <= 12) {   // 조건 12개 보다 같거나 작을 때-->
+<!--            if (cards.length === 1) {-->
+<!--                cards[0].style.width = "400px";-->
+<!--            } else if (cards.length === 2) {-->
+<!--                cards[0].style.width = "450px";-->
+<!--            } else if (cards.length === 3) {-->
+<!--                cards[0].style.width = "300px";-->
+<!--            }-->
+<!--        }-->
+<!--            // if (cards.length === 1) {-->
+<!--            //     // 카드 1개일 때-->
+<!--            //     cards[0].style.width = "400px";-->
+<!--            // } else if (cards.length % 2 === 0) {-->
+<!--            //     // 2의 배수일 때-->
+<!--            //     for (let i = 0; i < cards.length; i++) {-->
+<!--            //         cards[i].style.width = "450px";-->
+<!--            //     }-->
+<!--            // } else if (cards.length % 3 === 0 || cards.length % 5 === 0) {-->
+<!--            //     // 3, 5의 배수일 때-->
+<!--            //     for (let i = 0; i < cards.length; i++) {-->
+<!--            //         cards[i].style.width = "300px";-->
+<!--            //     }-->
+<!--            // }-->
+<!--        // } else if (cards.length > 12) {-->
+<!--        //     // nContainer.style.overflow = "hidden";-->
+<!--        //     cardContainer.style.display = "flex";-->
+<!--        //     cardContainer.style.flexWrap = "nowrap";-->
+<!--        //     cardContainer.style.animation = "scroll-left 10s linear infinite";-->
+<!--        //     for (let i = 0; i < cards.length; i ++) {-->
+<!--        //-->
+<!--        //         cards[i].style.width = "250px";-->
+<!--        //         cards[i].style.flex  = "0 0 auto";-->
+<!--        //-->
+<!--        //-->
+<!--        //     }-->
+<!--        // }-->
+<!--    }-->
 
-            return parseInt(lastFourNum) || 0;
-        }
+<!--    function sortList(order) {-->
+<!--        let cardGroup = document.getElementById("cardGroup");-->
+<!--        let cards = Array.from(cardGroup.getElementsByClassName("card"));-->
 
-        return 0
-    }
-</script>
+<!--        cards.sort(function(a, b) {-->
+<!--            let periodA = extractPeriod(a.querySelector(".period").textContent);-->
+<!--            let periodB = extractPeriod(b.querySelector(".period").textContent);-->
+
+<!--            if (order === 'latest') {-->
+<!--                return periodB - periodA;-->
+<!--            } else if (order === 'oldest') {-->
+<!--                return periodA - periodB;-->
+<!--            }-->
+<!--        });-->
+
+<!--        cardGroup.innerHTML = ''; // 정렬 전 카드그룹 비우기-->
+
+<!--        cards.forEach(card => cardGroup.appendChild(card)); // 정렬된 카드 카드그룹에 다시 추가-->
+<!--    }-->
+
+<!--    function extractPeriod(text) {-->
+
+<!--        let matches = text.match(/\d+/g); // 배열에 담아서-->
+<!--        if (matches) {-->
+<!--            let lastFourNum = matches[matches.length - 1].slice(-4); // 뒤에서 4자리만 선택-->
+
+<!--            return parseInt(lastFourNum) || 0;-->
+<!--        }-->
+
+<!--        return 0-->
+<!--    }-->
+<!--</script>-->

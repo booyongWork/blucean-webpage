@@ -46,10 +46,18 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <!-- AOS 라이브러리 js-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 </head>
 <body>
     <th:block th:replace="fragments/commonHead :: header"></th:block>
     <th:block layout:fragment="content"></th:block>
     <th:block th:replace="fragments/commonFooter :: footer"></th:block>
 </body>
+<script type="text/javascript">
+    AOS.init({
+        disable: 'mobile',
+        duration: 600,
+        once: false,
+    });
+</script>
 </html>
