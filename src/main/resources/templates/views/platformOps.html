@@ -15,33 +15,35 @@
 <main>
     <div id="layoutDefault">
         <div id="layoutDefault_content">
-            <!-- Page Header-->
+            <!-- 페이지 타이틀-->
             <header class="page-header-ui page-header-ui-light bg-white text-center">
                 <div class="page-header-ui-content pt-5">
                     <div class="container px-5">
                         <div class="row gx-5 align-items-center">
                             <div class="col-lg-6 mx-auto" data-aos="fade-up">
-                                <h1 class="page-header-ui-title">더블루션 플랫폼 운영</h1>
+                                <h1 class="page-header-ui-title"><span class="bizTitle">더블루션 플랫폼 운영</span></h1>
                                 <p class="page-header-ui-text mb-5">변화하는 디지털 환경에서 기업의 경쟁력 확보를 위해<br>최적의 IT 서비스를 제공합니다.</p>
                             </div>
                             <div class="buttonArea row" data-aos="fade-up" data-aos-delay="150">
                                 <div>
                                     <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/solutionDev'">API 솔루션</button>
                                     <button class="btn btn-dark me-2 my-1 btn-xl" onclick="window.location.href='/platformDev'">폴랫폼 개발</button>
-                                    <button class="btn me-2 my-1 btn-xl" onclick="window.location.href='/platformOps'" style="background-color: #2196f3; color: white;">폴랫폼 운영</button>
+                                    <button class="btn me-2 my-1 btn-xl biz-btn" onclick="window.location.href='/platformOps'">폴랫폼 운영</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+            <!-- 기업 슬라이더 세션 -->
             <section class="bg-white py-8">
                 <div class="container px-5" data-aos="fade-up" data-aos-delay="250">
                     <div class="row">
-                        <div class="pricing-columns row justify-content-center" id="slider" style="visibility: hidden; border-radius: 50%"></div>
+                        <div class="pricing-columns row justify-content-center slider-hidden border-radius-50" id="slider"></div>
                     </div>
                 </div>
             </section>
+            <!-- 풋터 wave 디자인 -->
             <section class="bg-white py-10">
                 <div class="svg-border-waves text-dark">
                     <!-- Wave SVG Border-->

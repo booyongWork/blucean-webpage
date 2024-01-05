@@ -6484,6 +6484,7 @@ textarea.form-control-lg {
 
 .accordion-body {
   padding: 1rem 1.25rem;
+  display: none;
 }
 
 .accordion-flush .accordion-collapse {
@@ -20244,7 +20245,15 @@ section {
 
 .titleBadge {
   color: #2196f3;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  border: 0;
+  margin: auto auto 24px;
+}
+
+.sm-titleBadge {
+  color: #363d47;
+  font-size: 25px;
   font-weight: 700;
   border: 0;
   margin: auto auto 24px;
@@ -20408,3 +20417,29 @@ section {
   font-display: swap;
 }
 
+/*사업분야 타이틀*/
+.bizTitle{
+  font-weight: bold;
+}
+
+/*사업분야 슬릭 슬라이더*/
+.slider-hidden {
+  visibility: hidden;
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+/*사업분야 선택 버튼*/
+.biz-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+/*아코디언 설정*/
+.accordion-card-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
