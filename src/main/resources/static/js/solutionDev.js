@@ -83,7 +83,7 @@ function toggleAccordion(clickedElement) { //전역변수 가져와서
     // 클릭한 아코디언이 열려있는 경우 닫기
     if (isClosing) {
         accordionBody.style.display = 'none';
-        icon.textContent = '◀'; // 닫혔을 때 아이콘 변경
+        icon.textContent = '▲'; // 닫혔을 때 아이콘 변경
     } else {
         // 닫혀있는 아코디언 열기
         accordionBody.style.display = 'block';

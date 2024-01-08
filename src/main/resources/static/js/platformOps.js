@@ -6,13 +6,52 @@
 // 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-    //     발리데이션, 예외처리, 장문 ... 으로 대체하는건?
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영2', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영3', date: '2022년~2023년' },
+        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영4', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영5', date: '2022년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영2', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영3', date: '2022년~2023년' },
+        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영4', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영5', date: '2022년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
+        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
+        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
+    // 발리데이션, 예외처리, 장문 ... 으로 대체하는건?
+    // img는 중복될수도 있어.title은 중복이 되면 안돼 date도 중복될수 있어
     ];
+
+    // // 중복을 확인할 객체 생성
+    // const titleCheck = {};
+    //
+    // // 중복 여부 체크
+    // let hasDuplicate = false;
+    // cardsData.forEach(item => {
+    //     if (titleCheck[item.title]) {
+    //         hasDuplicate = true;
+    //         alert(`중복된 제목이 있습니다: ${item.title}.<br>제목을 재등록해주세요.`);
+    //         return;
+    //     }
+    //     titleCheck[item.title] = true;
+    // });
+    //
+    // // 중복이 없으면 슬라이더 실행
+    // if (!hasDuplicate) {
+    //     // 여기에 슬라이더 실행하는 코드를 넣어주세요
+    //     // 예시: $('.slider').slick();
+    //     console.log('슬라이더를 실행합니다.');
+    // } else {
+    //     console.log('중복된 제목이 있어 슬라이더를 실행하지 않습니다.');
+    // }
 
     // cardsData html로 구성하는 부분
     cardsData.forEach(card => {
