@@ -67,7 +67,7 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 30px;
     line-height: 1;
 
     opacity: .75;
@@ -203,4 +203,32 @@
 {
     opacity: .75;
     color: black;
+}
+
+/* 태블릿과 모바일 화면에서 크기 변경 */
+@media (max-width: 768px) {
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px; /* 태블릿과 모바일 화면 크기에 따른 크기 설정 */
+    }
+    .pricing-columns-price {
+        height: 35vw !important;
+    }
+    #slider .slick-slide {
+      height: 30vw !important; /* 슬라이드 높이를 화면 너비의 15%로 설정 */
+    }
+
+    #platform-slider .slick-slide {
+        height: 40vw !important; /* 슬라이드 높이를 화면 너비의 15%로 설정 */
+        font-size: 10px;
+    }
+    #platform-slider .card-footer {
+        overflow: hidden; /* 테두리를 벗어나는 컨텐츠를 가려줍니다 */
+        padding: 0.7rem;
+
+    }
+    #cardTitle {
+         font-size: 14px; /* 폰트 사이즈 조정 */
+         /* 다른 스타일 속성도 추가 가능 */
+     }
 }

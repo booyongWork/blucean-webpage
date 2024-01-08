@@ -6,13 +6,12 @@
 // 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
-        { image: 'img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2017~2021월' },
-        { image: '/img/Biz/1648896908044.jpg', title: 'KT 에어맵 플랫폼 운영2', date: '2021~2022년' },
-        { image: '/img/Biz/1200x630wa.png', title: 'KT 에어맵 플랫폼 운영4', date: '2018년~' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영3', date: '2021년~' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영5', date: '2019~2021년' },
-        { image: '/img/Biz/img_s1_05.png', title: 'KT 에어맵 플랫폼 운영6', date: '2019~2021년' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2023년~' },
+    //     발리데이션, 예외처리, 장문 ... 으로 대체하는건?
     ];
 
     // cardsData html로 구성하는 부분
@@ -23,17 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 카드 섹션은 헤더와 풋터로 이뤄짐.
         const cardHeader = document.createElement('div');
-        cardHeader.classList.add('card-header', 'bg-transparent'); //클래스 적용 css
+        cardHeader.classList.add('card-header'); //클래스 적용 css
         cardHeader.style.display = 'flex';
         cardHeader.style.justifyContent = 'center';
         cardHeader.style.alignItems = 'center';
-        cardHeader.style.height = '250px';
 
         // 이미지 틀에 이미지 추가
         const cardImageContainer = document.createElement('div');
-        cardImageContainer.classList.add('pricing-columns-price'); //클래스 적용 css
+        // cardImageContainer.classList.add('pricing-columns-price'); //클래스 적용 css
         const cardImage = document.createElement('img'); // img 태그 생성
+        cardImage.style.width = '100%'; // 이미지 틀의 너비를 부모 요소와 동일하게 설정
+        cardImage.style.height = '100%'; // 이미지 틀의 높이를 부모 요소와 동일하게 설정
+
         cardImage.src = card.image;
+        cardImage.style.backgroundColor = '#F7F7FA';
         cardImageContainer.appendChild(cardImage);
 
         // 카드 헤더에 이미지 추가
@@ -46,10 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const cardFooter = document.createElement('div');
         cardFooter.classList.add('card-footer');
         cardFooter.style.textAlign = 'center';
+        // cardFooter.style.backgroundColor = 'white';
 
         // 카드 제목 추가 (h4 요소 생성)
         const cardTitle = document.createElement('h4');
+        cardTitle.classList.add('text-primary');
         cardTitle.textContent = card.title;
+        cardTitle.id = 'cardTitle'; // ID 추가
         cardFooter.appendChild(cardTitle);
 
         // 카드 날짜 추가 (p 요소 생성)
@@ -60,14 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
         // 카드 푸터를 새로운 카드에 추가
         newCard.appendChild(cardFooter);
 
+        cardHeader.style.borderBottom = 'none'; // 헤더의 하단 선 없애기
+
+        // 풋터의 상단 선 없애기
+        cardFooter.style.borderTop = 'none';
+
+        // 헤더와 풋터의 가운데 선 없애기
+        cardHeader.style.display = 'flex'; // 헤더를 flex로 설정하여 내부 요소 간 여백 조절
+        cardHeader.style.justifyContent = 'center'; // 가운데 정렬
+
         // 실제 HTML에 새로운 카드 추가
-        const cardContainer = document.getElementById('slider'); // 카드를 추가할 컨테이너
+        const cardContainer = document.getElementById('platform-slider'); // 카드를 추가할 컨테이너
         cardContainer.appendChild(newCard);
     });
 
     // 총 카드 수 따라 정렬 3 or 4
     function countCards() {
-        const cardContainer = document.getElementById('slider');
+        const cardContainer = document.getElementById('platform-slider');
         const cards = cardContainer.getElementsByClassName('card');
         const cardCount = cards.length;
 
@@ -134,26 +148,26 @@ document.addEventListener("DOMContentLoaded", function() {
         slidesToShowValue = 3;
     }
 
-    $('#slider').slick({
+    $('#platform-slider').slick({
         slidesToShow: slidesToShowValue, // 한 번에 보여질 슬라이드의 수
         slidesToScroll: slidesToShowValue, // 한 번에 스크롤 될 슬라이드의 수
-        autoplay: true, // 자동 재생 기능을 활성화
-        autoplaySpeed: 2000, // 자동 재생 속도
+        // autoplay: true, // 자동 재생 기능을 활성화
+        // autoplaySpeed: 2000, // 자동 재생 속도
         prevArrow: "<button type='button' class='slick-prev'>이전</button>",
         nextArrow: "<button type='button' class='slick-next'>다음</button>",
         responsive: [
             {
                 breakpoint: 768, // 태블릿까지
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             },
             {
                 breakpoint: 480, // 모바일까지
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             }
         ]
