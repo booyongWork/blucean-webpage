@@ -85,11 +85,12 @@ document.addEventListener("DOMContentLoaded", function() {
         cardFooter.style.height = '150px';
         // cardFooter.style.backgroundColor = 'white';
 
-        // 카드 제목 추가 (h4 요소 생성)
-        const cardTitle = document.createElement('h4');
+        // 카드 제목 추가 (div 요소 생성)
+        const cardTitle = document.createElement('div');
         cardTitle.classList.add('text-primary');
+        // cardTitle.style.fontSize = '16px'; // 폰트 크기 설정
 
-        // 제목이 15자 이상이면 줄여서 표시하고, 클릭하면 전체 내용을 보여줌
+// 제목이 15자 이상이면 줄여서 표시하고, 클릭하면 전체 내용을 보여줌
         const shortenedTitle = card.title.length > 53 ? card.title.substring(0, 53) + '...' : card.title;
         cardTitle.textContent = shortenedTitle;
 
@@ -220,5 +221,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         ]
     });
-
 });
