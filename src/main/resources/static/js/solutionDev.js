@@ -1,7 +1,7 @@
 // 파일이름 : solutionDev.js
 // 작 성 자 : 정부용
 // 작 성 일 : 2024.01.03
-// 설 명 : 더블루션 솔루션 js 적용
+// 설 명 : 더블루션 API솔루션 js 적용
 
 // 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {

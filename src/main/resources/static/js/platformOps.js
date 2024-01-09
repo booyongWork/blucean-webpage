@@ -3,34 +3,37 @@
 // 작 성 일 : 2024.01.03
 // 설 명 : 더블루션 플랫폼 운영 js 적용
 
+// TODO:booyong 모바일버젼에서 슬라이더 전환시 카드 박스 안에 h4 글자가 커졌다 작아지는 현상 해결해야함.
+
 // 모든 html 요소 로드 이후 이벤트 메서드 실행
 document.addEventListener("DOMContentLoaded", function() {
     const cardsData = [
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2021년~' },
+        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1KT 가나라다마바사아자차카타파에이비씨디이에프지에치아이제이케이엘엠앤오피큐알에스티유브이더블유엔엑스와이지', date: '2021년~' },
         { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영2', date: '2023년~' },
         { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영3', date: '2022년~2023년' },
         { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영4', date: '2021년~' },
         { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영5', date: '2022년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2021년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영2', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영3', date: '2022년~2023년' },
-        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영4', date: '2021년~' },
         { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영5', date: '2022년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
-        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
-        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
-        { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
-        { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
-        { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
-    // 발리데이션, 예외처리, 장문 ... 으로 대체하는건?
-    // img는 중복될수도 있어.title은 중복이 되면 안돼 date도 중복될수 있어
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영1', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영2', date: '2023년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영3', date: '2022년~2023년' },
+        // { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영4', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영5', date: '2022년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
+        // { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'KT 에어맵 플랫폼 운영', date: '2023년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: 'WhoWho 서비스 시스템 운영', date: '2022년~2023년' },
+        // { image: 'img/Biz/img_s1_17.png', title: '비즈메카 플랫폼운영', date: '2021년~' },
+        // { image: 'img/Biz/img_s1_17.png', title: '지니뮤직 서비스 운영', date: '2022년~' },
+        // 발리데이션, 예외처리, 장문 ... 으로 대체하는건?
+        // img는 중복될수도 있어.title은 중복이 되면 안돼 date도 중복될수 있어
     ];
 
-    // // 중복을 확인할 객체 생성
+    // 중복을 확인할 객체 생성
     // const titleCheck = {};
     //
     // // 중복 여부 체크
@@ -38,20 +41,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // cardsData.forEach(item => {
     //     if (titleCheck[item.title]) {
     //         hasDuplicate = true;
-    //         alert(`중복된 제목이 있습니다: ${item.title}.<br>제목을 재등록해주세요.`);
+    //         alert(`중복된 제목이 있습니다: ${item.title}.`);
     //         return;
     //     }
     //     titleCheck[item.title] = true;
     // });
-    //
-    // // 중복이 없으면 슬라이더 실행
-    // if (!hasDuplicate) {
-    //     // 여기에 슬라이더 실행하는 코드를 넣어주세요
-    //     // 예시: $('.slider').slick();
-    //     console.log('슬라이더를 실행합니다.');
-    // } else {
-    //     console.log('중복된 제목이 있어 슬라이더를 실행하지 않습니다.');
-    // }
+
 
     // cardsData html로 구성하는 부분
     cardsData.forEach(card => {
@@ -87,12 +82,26 @@ document.addEventListener("DOMContentLoaded", function() {
         const cardFooter = document.createElement('div');
         cardFooter.classList.add('card-footer');
         cardFooter.style.textAlign = 'center';
+        cardFooter.style.height = '150px';
         // cardFooter.style.backgroundColor = 'white';
 
         // 카드 제목 추가 (h4 요소 생성)
         const cardTitle = document.createElement('h4');
         cardTitle.classList.add('text-primary');
-        cardTitle.textContent = card.title;
+
+        // 제목이 15자 이상이면 줄여서 표시하고, 클릭하면 전체 내용을 보여줌
+        const shortenedTitle = card.title.length > 53 ? card.title.substring(0, 53) + '...' : card.title;
+        cardTitle.textContent = shortenedTitle;
+
+        cardTitle.addEventListener('click', () => {
+            if (cardTitle.textContent !== card.title) {
+                cardTitle.textContent = card.title;
+            } else {
+                cardTitle.textContent = shortenedTitle;
+            }
+        });
+
+        // cardTitle.textContent = card.title;
         cardTitle.id = 'cardTitle'; // ID 추가
         cardFooter.appendChild(cardTitle);
 
@@ -140,21 +149,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateElement = card.querySelector('p');
         const dateInfo = dateElement.textContent.trim();
         const extractedDate = dateInfo.substring(0, 4); // 앞의 네 자리 추출
-        console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
+        // console.log(`카드 ${index + 1}의 날짜: ${extractedDate}`);
         return { dateInfo: extractedDate, card };
     });
 
     // 날짜 정보를 비교하여 **내림차순** 정렬하는 함수
-    cardDates.sort((a, b) => {
-        const dateA = new Date(a.dateInfo);
-        const dateB = new Date(b.dateInfo);
-        if (dateA > dateB) {
-            return -1; // dateA가 dateB보다 크면 *dateA*를 더 *앞으로* 위치시킴
-        } else if (dateA < dateB) {
-            return 1; // dateA가 dateB보다 작으면 *dateB*를 더 *앞으로* 위치시킴
-        }
-        return 0; // 같은 경우 순서 변경하지 않음
-    });
+    // cardDates.sort((a, b) => {
+    //     const dateA = new Date(a.dateInfo);
+    //     const dateB = new Date(b.dateInfo);
+    //     if (dateA > dateB) {
+    //         return -1; // dateA가 dateB보다 크면 *dateA*를 더 *앞으로* 위치시킴
+    //     } else if (dateA < dateB) {
+    //         return 1; // dateA가 dateB보다 작으면 *dateB*를 더 *앞으로* 위치시킴
+    //     }
+    //     return 0; // 같은 경우 순서 변경하지 않음
+    // });
 
     //.TODO:booyong 정렬방식 결정에 따라 삭제예정
     // **오름차순** 정렬
@@ -211,4 +220,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         ]
     });
+
 });
